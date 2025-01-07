@@ -1,0 +1,694 @@
+/*
+  The Name:5840 holdings
+  Author: 
+  Support: 
+  Description:5840 holdings
+  Version: 1.0
+*/
+
+/* CSS Index
+-----------------------------------
+1.default css
+2.banner section 
+-----------------------------------
+*/
+
+
+/* ==================== 1.default section start ===================== */
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* font family */
+.font-pt-serif{
+    font-family: "PT Serif", serif;
+}
+.font-roboto{
+    font-family: "Roboto", serif;
+}
+
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: 'Neue-Haas-Grotesk-Display-Pro' , sans-serif;
+    color: #231F20;
+}
+
+/* lenis */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* lenis */
+
+/* scroll bar */
+.os-scrollbar-handle {
+    background: #9AB5CA;
+}
+body>.os-scrollbar {
+    z-index: 999;
+}
+/* scroll bar */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* animation */
+.animation-line{
+    overflow: hidden;
+}
+/* animation */
+
+/* paralax img */
+.trigger-parallax {
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-img {
+    height: calc(100% + 120px);
+    width: 100%;
+    object-fit: cover;
+    transform: translateY(0);
+}
+
+/* paralax img */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bg-fix {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* container */
+.container {
+    max-width: 1336px;
+}
+
+/* z-index */
+.z-4 {
+    z-index: 4 !important;
+}
+
+/* z-index */
+
+/* input */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="number"], 
+input[type="password"], 
+input[type="url"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #000;
+    color: rgba(80, 80, 80, 0.50);
+    font-family: "Helvetica", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 1;
+}
+textarea{
+	height: 116px;
+}
+input:focus , textarea:focus{
+	outline: none;
+	box-shadow: none;
+}
+::placeholder {
+    color: rgba(80, 80, 80, 0.50);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+/* input */
+
+
+
+.animation-line p:last-child,
+.mb-p p:last-child{
+    margin-bottom: 0;
+}
+
+/* heading  style*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #9AB5CA;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "PT Serif", serif;
+}
+
+h1 {
+    font-size: 87.163px;
+}
+
+h2 {
+    font-size: 64px;
+}
+
+h3 {
+    font-size: 48px;
+}
+
+h4 {
+    font-size: 36px;
+}
+
+h5 {
+    font-size: 30px;
+}
+
+h6 {
+    font-size: 24px;
+}
+
+/* all button start */
+.holdings-btn {
+    color: #FFF;
+    font-family: "Roboto", serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    display: inline-block;
+    border: 1px solid #FFC588;
+    padding: 12px 24px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+.holdings-btn::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #FFC588;
+    z-index: -1;
+    transition: all 0.3s linear;
+}
+.holdings-btn:hover{
+    color: #000000;
+}
+.holdings-btn:hover:before{
+    left: 0;
+}
+.holdings-btn.version-2{
+    border-color: #D8A876;
+    color: #000000;
+    transition: all 0.3s linear;
+}
+.holdings-btn.version-2:hover{
+    color: #fff;
+}
+.holdings-btn.version-2:hover::before{
+    background:#D8A876; 
+}
+/* all button end */
+
+
+
+/* ==================== 1.default section end===================== */
+
+/* ==================== 2.header section start ===================== */
+.header-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 19px 0;
+
+}
+.header-area::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, #000 41.76%, rgba(0, 0, 0, 0.00) 100%);
+    z-index: -1;
+}
+.header-area .col:nth-child(1){
+    max-width: 183px;
+}
+.header-logo img{
+    max-width: 183px;
+}
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-menu ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 0 24px;
+    margin-right: 8px;
+}
+.main-menu ul li:last-child{
+    margin-right: 0;
+}
+.main-menu ul li > img {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: all 0.3s linear;
+}
+.main-menu ul li:hover > img,
+.main-menu ul li.active > img{
+    opacity: 1;
+    visibility: visible;
+}
+.main-menu ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 1.5;
+    transition: all 0.3s linear;
+}
+.main-menu ul li a:hover{
+    color: #FFC588;
+}
+.menu-icon {
+    height: 14px;
+}
+.menu-icon span {
+    display: block;
+    height: 2px;
+    width: 36px;
+    background-color: #fff;
+    margin-bottom: 3px;
+}
+.menu-icon span:last-child{
+    margin-bottom: 0;
+}
+
+/* offcanvas menu  start*/
+.offcanvas{
+    background: linear-gradient(0deg, rgba(37, 42, 50, 0.00) 0%, #252A32 53.09%), #434B56;
+    border: 0;
+}
+.close-icon {
+    border: 0;
+    background: transparent;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Neue-Haas-Grotesk-Display-Pro' , sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 4.8px;
+}
+/* offcanvas menu  end*/
+/* ==================== 2.header section end ===================== */
+
+/* ==================== 3.banner section start ===================== */
+.banner-area{
+    height: 100vh;
+    min-height: 500px;
+    padding-bottom: 83px;
+}
+.banner-shap-img{
+    left: -50%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+.banner-area::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), linear-gradient(70deg, rgba(0, 0, 0, 0.50) -0.59%, rgba(0, 0, 0, 0.00) 53.39%);
+    z-index: 3;
+}
+.banner-area::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
+    background-blend-mode: multiply;
+    z-index: 1;
+}
+.video-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: -1;
+    background-color: #000000;
+}
+.banner-content h1 {
+    line-height: 0.92;
+    margin-bottom: 30px;
+}
+.banner-content h1 span{
+    color: #fff;
+}
+.banner-content p {
+    color: #FFF;
+    font-size: 24px;
+    letter-spacing: 1.2px;
+}
+.banner-content .holdings-btn {
+    margin-top: 12px;
+}
+.separate-div{
+    height: 8px;
+    width: 100%;
+    background-color: #9AB5CA;
+}
+/* ==================== 3.banner section end ===================== */
+
+/* ==================== 4.our Journey section start ===================== */
+.our-Journey-section{
+    padding-bottom:64px;
+}
+.bg-common-color {
+    position: relative;
+    z-index: 1;
+    background: #F0EFEF;
+}
+.bg-common-color::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(219deg, rgba(255, 255, 255, 0.00) 32.9%, rgba(255, 255, 255, 0.20) 84.89%), #F0EFEF;
+}
+.tp-brand-slider .swiper-wrapper {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+} 
+.tp-brand-slider .swiper-slide {
+    width: auto;
+    display: inline-block;
+}
+.tp-brand-img {
+    display: flex;
+    align-items: end;
+    min-height: 83px;
+}
+.tp-brand-area {
+    padding: 61px 0 35px;
+}
+.tp-brand-area::after ,
+.tp-brand-area::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(50% - 200px);
+    background: linear-gradient(90deg, #F0EFEF 41.3%, rgba(240, 239, 239, 0.00) 100%);
+    z-index: 2;
+}
+.tp-brand-area::after {
+    left: auto;
+    right: 0;
+    /* background: linear-gradient(90deg, #F0EFEF 41.3%, rgba(240, 239, 239, 0.00) 100%); */
+    background: linear-gradient(-90deg, #F0EFEF 41.3%, rgba(240, 239, 239, 0.00) 100%);
+}
+.our-journey-content h2{
+    line-height: 0.94;
+}
+.our-journey-content h2 span{
+    color: #231F20;
+}
+.our-journey-content .holdings-btn {
+    margin-top: 30px;
+}
+.our-Journey-content-item {
+    margin-top: 56px;
+}
+/* ==================== 4.our Journey section end ===================== */
+
+/* ==================== 5.portfolio section start ===================== */
+.bg-common-color-2{
+    position: relative;
+    z-index: 1;
+    background: #434B56;
+}
+.bg-common-color-2::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(37, 42, 50, 0.00) 0%, #252A32 53.09%), #434B56;
+}
+.section-title-caption-info{
+    gap: 72px;
+}
+.section-title-caption-info  > div{
+    flex: 1 0 0%;
+}
+.section-title-caption-info  p{
+    color: #fff;
+    letter-spacing: 2.7px;
+}
+.section-title-caption{
+    gap: 24px;
+}
+.portfolio-area .section-title-wrapper {
+    padding: 90px 0 63px;
+}
+.portfolio-card {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.50);
+    transition: all 0.3s linear;
+}
+.portfolio-card-info{
+    border: 2px solid transparent;
+    transition: all 0.3s linear;
+}
+
+.portfolio-slider-wrapper {
+    padding-bottom: 36px;
+}
+.portfolio-slider {
+    overflow: inherit;
+}
+.portfolio-slider-wrapper .container{
+    max-width: 1192px;
+}
+.portfolio-card-content {
+    position: absolute;
+    left: 0;
+    z-index: 9;
+    transform: rotate(-90deg) translateX(30px);
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
+.portfolio-card-content h5 {
+    color: #F0EFEF;
+    font-family: 'Neue-Haas-Grotesk-Display-Pro' , sans-serif;
+    font-size: 27.322px;
+    letter-spacing: 4.098px;
+    position: relative;
+    z-index: 1;
+    padding: 0 22px 0 25px;
+}
+.portfolio-card-content h5 img {
+    position: absolute;
+    left: 0px;
+    bottom: -12px;
+    width: 100%;
+}
+.portfolio-card  a {
+    position: absolute;
+    top: -6px;
+    right: 6px;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
+.portfolio-card:hover {
+    box-shadow: 4px 8px 25px 0px rgba(0, 0, 0, 0.25);
+}
+.portfolio-card:hover .portfolio-card-info{
+    border-color: #FFC588;
+}
+.portfolio-card:hover  a{
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+}
+.portfolio-card:hover .portfolio-card-content{
+    transform: rotate(-90deg) translateX(61px);
+    opacity: 1;
+    visibility: visible;
+}
+.portfolio-card-img{
+    background: lightgray;
+}
+.portfolio-card-img img{
+    mix-blend-mode: luminosity;
+}
+.portfolio-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(205, 23, 53, 0.00) 0%, rgba(205, 23, 53, 0.90) 73.77%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+    z-index: 1;
+}
+.portfolio-card:hover::before{
+    opacity: 1;
+    visibility: visible;
+}
+.swiper-slide:nth-child(even) .portfolio-card::before {
+    background: linear-gradient(180deg, rgba(36, 181, 241, 0.00) 0%, rgba(36, 181, 241, 0.90) 72.8%);
+}
+.swiper-slide:nth-child(even) .portfolio-card:hover::before{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* swiper section start */
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after ,
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    display: none;
+}
+.swiper-icon-btn {
+    height: 48px;
+    width: 48px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100%;
+    background-color:transparent;
+    transition: all 0.3s linear;
+    z-index: 9;
+}
+.swiper-icon-btn:hover{
+    background-color: #9AB5CA;
+}
+.swiper-icon-btn svg {
+    height: 16px;
+    width: 16px;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: -96px;
+    right: auto;
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: -96px;
+    left: auto;
+}
+.swiper-scrollbar {
+    border-radius: 0;
+    background: transparent;
+    background-image: url('../images/portfolio/scroll-bar.svg');
+}
+.swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 50;
+    height: 2px;
+    width: calc(100% - 46 * var(--swiper-scrollbar-sides-offset,1%));
+    transform: translateX(-50%);
+}
+.swiper-scrollbar-drag {
+    left: 0;
+    top: -2px;
+    height: 6px;
+    border-radius: 100px;
+    background: linear-gradient(270deg, #9AB5CA 0%, #FFF 100%);
+}
+.portfolio-slider{
+    padding-bottom: 90px;
+}
+/* swiper section end */
+.portfolio-inner-area::after ,
+.portfolio-inner-area::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 264px;
+    background: radial-gradient(31.59% 100% at 0% 50%, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.00) 100%);
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+.portfolio-inner-area::after{
+    left: auto;
+    right: 0;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+
+    background-blend-mode: multiply;
+}
+/* ==================== 5.portfolio section end ===================== */

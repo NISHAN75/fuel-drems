@@ -1,0 +1,117 @@
+/* 1400, 1199, 991, 767, 575, 480, 360, 320 */
+/* CSS Index
+-----------------------------------
+1.default css
+-----------------------------------
+*/
+
+/* min-width 1500 */
+@media (max-width: 1600px) {
+
+    
+}
+/* min-width 1440 */
+@media (max-width: 1440px) {
+    .tp-brand-area::after ,
+    .tp-brand-area::before {
+        width: calc(50% - 380px);
+    }
+}
+
+/* max-width 1399 */
+@media (max-width: 1399.98px) {
+
+
+
+}
+
+/* max-width 1199 */
+@media (max-width: 1199.98px) {
+    .tp-brand-area::after ,
+    .tp-brand-area::before {
+        width: calc(50% - 300px);
+    }
+
+
+}
+
+/* max-width 991 */
+@media (max-width: 991.98px) {
+    h1 , h2 {
+        font-size: 64px;
+    }
+    
+    h3 {
+        font-size: 48px;
+    }
+    
+    h4 {
+        font-size: 36px;
+    }
+    
+
+    
+
+/* ==================== 3.banner section start ===================== */
+.banner-area {
+    height: 100%;
+    min-height: 740px;
+    padding-bottom: 64px;
+}
+.banner-content p {
+    font-size: 18px;
+    letter-spacing: 0.9px;
+}
+.banner-shap-img {
+    display: none;
+}
+.banner-area::before{
+    display: none;
+}
+.banner-area::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 39.05%, #000 52.57%);
+    mix-blend-mode: multiply;
+}
+/* ==================== 3.banner section end ===================== */
+}
+
+/* max-width 767 */
+@media (max-width: 767.98px) {
+    h1 , h2 {
+        font-size: 40px;
+    }
+    
+    h3 {
+        font-size: 36px;
+    }
+    
+    h4 {
+        font-size: 30px;
+    }
+    
+    h5 {
+        font-size: 24px;
+    }
+    
+    h6 {
+        font-size: 20px;
+    }
+    
+}
+
+/* max-width 575 */
+@media (max-width: 575.98px) {
+   
+}
+
+/* max-width 479 */
+@media (max-width: 479.98px) {
+
+ 
+
+}
+
+/* max-width 383 */
+@media (max-width: 383.98px) {
+  
+}
