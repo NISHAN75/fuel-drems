@@ -21,7 +21,14 @@
 /* max-width 1399 */
 @media (max-width: 1399.98px) {
 
-
+  /* ==================== 5.portfolio section start ===================== */
+  .portfolio-slider .swiper-button-prev, .portfolio-slider .swiper-rtl .swiper-button-next {
+        left: 0px;
+    }
+    .portfolio-slider .swiper-button-next, .portfolio-slider .swiper-rtl .swiper-button-prev {
+        right: 0;
+    }
+  /* ==================== 5.portfolio section end ===================== */
 
 }
 
@@ -31,8 +38,15 @@
     .tp-brand-area::before {
         width: calc(50% - 300px);
     }
-
-
+    /* ==================== 5.portfolio section start ===================== */
+    .portfolio-area .section-title-caption-info {
+        flex-direction: column;
+        align-items: start !important;
+    }
+    .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+        width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%));
+    }
+    /* ==================== 5.portfolio section end ===================== */
 }
 
 /* max-width 991 */
@@ -48,6 +62,17 @@
     h4 {
         font-size: 36px;
     }
+    .row {
+        --bs-gutter-y: 30px;
+    }
+    /* all padding */
+    .testimonial-area ,
+    .portfolio-area .section-title-wrapper {
+        padding: 50px 0;
+    }
+    /* all padding */
+
+
     
 
     
@@ -73,6 +98,31 @@
     mix-blend-mode: multiply;
 }
 /* ==================== 3.banner section end ===================== */
+
+/* ==================== 5.portfolio section start ===================== */
+.portfolio-area .section-title-wrapper .row {
+    --bs-gutter-y: 10px;
+}
+.portfolio-slider {
+    padding-bottom: 50px;
+}
+/* ==================== 5.portfolio section end ===================== */
+
+/* ==================== 6.testimonial section start ===================== */
+.testimonial-content blockquote {
+    font-size: 24px;
+}
+.testimonial-content {
+    max-width: 600px;
+}
+/* ==================== 6.testimonial section end ===================== */
+
+
+
+
+
+
+
 }
 
 /* max-width 767 */
@@ -96,12 +146,35 @@
     h6 {
         font-size: 20px;
     }
+
+    /* ==================== 6.testimonial section start ===================== */
+    .testimonial-content img {
+        margin-bottom: 15px;
+    }
+    .testimonial-content {
+        max-width: 400px;
+    }
+    .author-information-wrapper {
+        margin-top: 25px;
+    }
+    .testimonial-slider  .swiper-wrapper {
+        margin-bottom: 30px;
+    }
+    /* ==================== 6.testimonial section end ===================== */
     
 }
 
 /* max-width 575 */
 @media (max-width: 575.98px) {
-   
+    .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+        width: 100%;
+    }
+    /* ==================== 6.testimonial section start ===================== */
+    .portfolio-slider  .swiper-icon-btn{
+        display: none;
+    }
+    /* ==================== 6.testimonial section end ===================== */
+
 }
 
 /* max-width 479 */

@@ -57,12 +57,6 @@
         // animation
 
   
-
-
-
-
-
-
         // portfolio slider
         let portfolioSlider = new Swiper(".portfolio-slider", {
             slidesPerView: 7,
@@ -74,10 +68,20 @@
             breakpoints: {
                 // when window width is >= 640px
                 0: {
-                    slidesPerView: 1,
+                    slidesPerView: 3,
+                    spaceBetween: 32,
+                },
+                480: {
+                    slidesPerView: 4,
+                    spaceBetween: 32,
                 },
                 768: {
+                    slidesPerView: 5,
+                    spaceBetween: 32,
+                },
+                1200: {
                     slidesPerView: 7,
+                    spaceBetween: 40,
                 },
             },
             scrollbar: {
@@ -87,6 +91,19 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },  
+        });
+        // testimonial slider
+        var testimonialSlider = new Swiper(".testimonial-slider", {
+            cssMode: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+            mousewheel: true,
+            keyboard: true,
         });
         // brand slider 
         let brandSlider = new Swiper(".tp-brand-slider", {
