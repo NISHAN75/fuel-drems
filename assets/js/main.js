@@ -144,6 +144,7 @@
             });
         });
         // lenis
+        $(".back-top-wrapper").on("click",function(e){e.preventDefault();lenis.scrollTo(0)});
         // Initialize a new Lenis instance for smooth scrolling
         const lenis = new Lenis();
 

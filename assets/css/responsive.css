@@ -79,8 +79,7 @@
 
 /* ==================== 3.banner section start ===================== */
 .banner-area {
-    height: 100%;
-    min-height: 740px;
+    min-height: 500px;
     padding-bottom: 64px;
 }
 .banner-content p {

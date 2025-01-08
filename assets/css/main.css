@@ -53,7 +53,10 @@ html.lenis body {
 .lenis.lenis-stopped {
     overflow: hidden;
 }
-
+main{
+    position: relative;
+    z-index: 9;
+}
 /* lenis */
 
 /* scroll bar */
@@ -120,6 +123,38 @@ img {
 }
 
 /* z-index */
+
+/* rotate text section start  */
+.rotate-text-wrapper {
+    position: fixed;
+    width: 224px;
+    height: 224px;
+    z-index: 999;
+    border-radius: 50%;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+    mix-blend-mode: difference;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s linear;
+}
+@keyframes rotateText {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+.rotate-text {
+    animation: rotateText 12s linear infinite;
+}
+.rotate-text-inner .inner-text {
+    height: 124px;
+    width: 160px;
+    cursor: pointer;
+}
+/* rotate text section end  */
 
 /* input */
 input[type="text"], 
@@ -201,52 +236,11 @@ h6 {
 }
 
 /* all button start */
-.holdings-btn {
-    color: #FFF;
-    font-family: "Roboto", serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    display: inline-block;
-    border: 1px solid #FFC588;
-    padding: 12px 24px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    transition: 0.3s ease-in-out;
-}
-.holdings-btn::before {
-    content: "";
-    position: absolute;
-    left: -100%;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: #FFC588;
-    z-index: -1;
-    transition: 0.3s ease-in-out;
-}
-.holdings-btn:hover{
-    color: #000000;
-}
-.holdings-btn:hover:before{
-    left: 0;
-}
-.holdings-btn.version-2{
-    border-color: #D8A876;
-    color: #000000;
-    transition: 0.3s ease-in-out;
-}
-.holdings-btn.version-2:hover{
-    color: #fff;
-}
-.holdings-btn.version-2:hover::before{
-    background:#D8A876; 
-}
 .btn-wrapper {
     display: inline-block;
     position: relative;
     z-index: 1;
+    height: 48px;
 }
 .btn-inner-info {
     color: #FFF;
@@ -272,53 +266,13 @@ h6 {
     transition: 1s ease-in-out;
 }
 .btn-inner-info:hover {
+    background-color: #434B56;
     transition: 0.3s ease-in-out;
 }
 .btn-inner-info:hover svg {
     stroke-dashoffset: -480;
 }
   
-.center {
-    width: 180px;
-    height: 60px;
-    position: absolute;
-}
-
-.btn-1 {
-    width: 180px;
-    height: 60px;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #91C9FF;
-    outline: none;
-    transition: 1s ease-in-out;
-}
-
-.btn-1 svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    fill: none;
-    stroke: #fff;
-    stroke-dasharray: 150 480;
-    stroke-dashoffset: 150;
-    transition: 1s ease-in-out;
-}
-
-.btn-1:hover {
-    transition: 1s ease-in-out;
-    background: #4F95DA;
-}
-
-.btn-1:hover svg {
-    stroke-dashoffset: -480;
-}
-
-.btn-1 span {
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
-}
   
 /* all button end */
 /* swiper section start */
@@ -437,15 +391,12 @@ h6 {
 }
 .main-menu ul li {
     display: inline-block;
-    position: relative;
-    z-index: 1;
-    padding: 0 24px;
     margin-right: 8px;
 }
 .main-menu ul li:last-child{
     margin-right: 0;
 }
-.main-menu ul li > img {
+.main-menu ul li a > img {
     position: absolute;
     bottom: -7px;
     left: 0;
@@ -456,8 +407,8 @@ h6 {
     z-index: -1;
     transition: 0.3s ease-in-out;
 }
-.main-menu ul li:hover > img,
-.main-menu ul li.active > img{
+.main-menu ul li:hover a > img,
+.main-menu ul li.active a > img{
     opacity: 1;
     visibility: visible;
 }
@@ -467,8 +418,12 @@ h6 {
     font-size: 16px;
     font-weight: 450;
     line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    padding: 0 25px;
     transition: 0.3s ease-in-out;
 }
+.main-menu ul li.active a,
 .main-menu ul li a:hover{
     color: #FFC588;
 }
@@ -562,7 +517,7 @@ h6 {
     font-size: 24px;
     letter-spacing: 1.2px;
 }
-.banner-content .holdings-btn {
+.banner-content .btn-wrapper {
     margin-top: 12px;
 }
 .separate-div{
@@ -630,11 +585,19 @@ h6 {
 .our-journey-content h2 span{
     color: #231F20;
 }
-.our-journey-content .holdings-btn {
+.our-journey-content .btn-wrapper {
     margin-top: 30px;
 }
 .our-Journey-content-item {
     margin-top: 56px;
+}
+.our-Journey-content-info {
+    max-width: 585px;
+}
+.our-Journey-content-info p{
+    margin-bottom: 30px;
+    color: #231F20;
+    letter-spacing: 2.7px;
 }
 /* ==================== 4.our Journey section end ===================== */
 
@@ -660,7 +623,7 @@ h6 {
     max-width: 300px;
     margin-bottom: 0;
 }
-.section-title-caption-info .holdings-btn {
+.section-title-caption-info .btn-wrapper {
     margin-top: 15px;
 }
 .portfolio-caption-line {
@@ -1056,9 +1019,6 @@ h6 {
 /* ==================== 7.our expertise section end===================== */
 
 /* ==================== 7.footer section start===================== */
-.footer-area{
-    padding: 50px 0 16px;
-}
 .copy-right-caption {
     color:#FFF;
     font-family:"neue-haas-grotesk-display", sans-serif;
@@ -1079,6 +1039,14 @@ h6 {
     display: block;
     margin: 35px 0;
 }
+.footer-area{
+    background: #434B56;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    padding: 50px 0 16px;
+}
 
 .footer-bg{
     position: absolute;
@@ -1089,7 +1057,7 @@ h6 {
     z-index: -1;
     opacity: 0.1;
 }
-/* .footer-area::before{
+.footer-area::before{
     content: "";
     position: absolute;
     left: 0;
@@ -1098,5 +1066,5 @@ h6 {
     width: 100%;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 70.47%, #000 100%), linear-gradient(270deg, rgba(0, 0, 0, 0.00) 58.44%, rgba(0, 0, 0, 0.50) 100%);
     z-index: -1;
-} */
+}
 /* ==================== 7.footer section end===================== */
