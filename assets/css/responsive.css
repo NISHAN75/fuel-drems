@@ -34,6 +34,17 @@
 
 /* max-width 1199 */
 @media (max-width: 1199.98px) {
+
+
+    .container{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+
+
+
+
     .tp-brand-area::after ,
     .tp-brand-area::before {
         width: calc(50% - 300px);
@@ -71,23 +82,17 @@
         padding: 50px 0;
     }
     /* all padding */
-
-
     
-
     
 
 /* ==================== 3.banner section start ===================== */
 .banner-area {
-    min-height: 500px;
-    padding-bottom: 64px;
+    min-height: 740px;
+    padding-bottom: 60px;
 }
 .banner-content p {
     font-size: 18px;
     letter-spacing: 0.9px;
-}
-.banner-shap-img {
-    display: none;
 }
 .banner-area::before{
     display: none;
@@ -98,6 +103,16 @@
 }
 /* ==================== 3.banner section end ===================== */
 
+/* ==================== 4.our Journey section start ===================== */
+.tp-brand-area {
+    padding: 20px 0 40px;
+}
+.tp-brand-area::after ,
+.tp-brand-area::before {
+    width: 300px;
+}
+/* ==================== 4.our Journey section start ===================== */
+
 /* ==================== 5.portfolio section start ===================== */
 .portfolio-area .section-title-wrapper .row {
     --bs-gutter-y: 10px;
@@ -105,17 +120,66 @@
 .portfolio-slider {
     padding-bottom: 50px;
 }
+.portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card{
+    height: 450px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card{
+    height: 520px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(2) .portfolio-card{
+    height: 580px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(3) .portfolio-card{
+    height: 480px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(4) .portfolio-card{
+    height: 610px;
+    margin-bottom: -7px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(5) .portfolio-card{
+    height: 525px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(6) .portfolio-card{
+    height: 580px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(7) .portfolio-card{
+    height: 470px;
+}
+.portfolio-slider-wrapper .swiper-slide:nth-child(8) .portfolio-card{
+    height: 535px;
+}
 /* ==================== 5.portfolio section end ===================== */
 
 /* ==================== 6.testimonial section start ===================== */
 .testimonial-content blockquote {
-    font-size: 24px;
+    font-size: 32px;
 }
 .testimonial-content {
     max-width: 600px;
 }
 /* ==================== 6.testimonial section end ===================== */
-
+/* ==================== 7.footer section start===================== */
+.footer-area {
+    position: relative;
+    padding: 20px 0 10px;
+}
+.footer-area .container{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.mobile-footer-bottom,
+.mobile-footer-manu-wrapper{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.footer-area::after, .footer-area::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 76.65%, rgba(0, 0, 0, 0.80) 100%), #434B56;
+    z-index: -1;
+}
+.footer-area::after{
+    background: linear-gradient(0deg, rgba(37, 42, 50, 0.00) 66.32%, #252A32 100%), #434B56;
+}
+/* ==================== 7.footer section end===================== */
 
 
 
@@ -145,7 +209,10 @@
     h6 {
         font-size: 20px;
     }
-
+    .tp-brand-area::after ,
+    .tp-brand-area::before {
+        width: 150px;
+    }
     /* ==================== 6.testimonial section start ===================== */
     .testimonial-content img {
         margin-bottom: 15px;
@@ -160,6 +227,42 @@
         margin-bottom: 30px;
     }
     /* ==================== 6.testimonial section end ===================== */
+
+    /* ==================== 5.portfolio section start ===================== */
+    .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card{
+        height: 400px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card {
+        height: 470px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(2) .portfolio-card {
+        height: 530px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(3) .portfolio-card{
+        height: 440px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(4) .portfolio-card{
+        height: 530px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(5) .portfolio-card {
+        height: 490px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(6) .portfolio-card {
+        height: 530px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(7) .portfolio-card{
+        height: 430px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(8) .portfolio-card{
+        height: 490px;
+    }
+    .portfolio-slider {
+        padding-bottom: 64px;
+    }
+    .portfolio-slider-wrapper {
+        padding-bottom: 24px;
+    }
+/* ==================== 5.portfolio section end ===================== */
     
 }
 
@@ -168,11 +271,132 @@
     .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
         width: 100%;
     }
-    /* ==================== 6.testimonial section start ===================== */
+    .tp-brand-area::after ,
+    .tp-brand-area::before {
+        width: 115px;
+    }
+    /* ==================== 1.banner section start ===================== */
+    .banner-content h1 {
+        margin-bottom: 20px;
+    }
+    .banner-content p br{
+        display: none;
+    }
+    .banner-content .btn-wrapper {
+        margin-top: 20px;
+    }
+    /* ==================== 1.banner section end ===================== */
+    /* ==================== 4.our Journey section start ===================== */
+    .our-Journey-content-wrapper .row {
+        --bs-gutter-y: 20px;
+    }
+    .our-Journey-content-info p {
+        font-size: 18px;
+        letter-spacing: 0.9px;
+    }
+    /* ==================== 4.our Journey section end ===================== */
+
+
+
+/* ==================== 5.portfolio section start ===================== */
+    .portfolio-area .section-title-wrapper .row {
+        --bs-gutter-y: 17px;
+    }
+    .section-title-caption-info  p {
+        max-width: 100%;
+        font-size: 18px;
+        letter-spacing: 0.9px;
+    }
+    .section-title-caption-info .btn-wrapper {
+        margin-top: 35px;
+    }
+    .portfolio-area .section-title-wrapper{
+        padding-bottom: 30px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card{
+        height: 350px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card {
+        height: 360px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(2) .portfolio-card {
+        height: 410px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(3) .portfolio-card{
+        height: 340px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(4) .portfolio-card{
+        height: 420px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(5) .portfolio-card {
+        height: 380px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(6) .portfolio-card {
+        height: 410px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(7) .portfolio-card{
+        height: 330px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(8) .portfolio-card{
+        height: 380px;
+    }
     .portfolio-slider  .swiper-icon-btn{
         display: none;
     }
-    /* ==================== 6.testimonial section end ===================== */
+/* ==================== 5.portfolio section end ===================== */
+
+/* ==================== 6.testimonial section start ===================== */
+.testimonial-slider .swiper-button-next, 
+.testimonial-slider .swiper-button-prev {
+    top: auto;
+    margin-top: 0;
+    bottom: 0;
+}
+.testimonial-slider .swiper-button-prev, 
+.testimonial-slider .swiper-rtl .swiper-button-next {
+    left: 50px;
+}
+.testimonial-slider .swiper-button-next, 
+.testimonial-slider .swiper-rtl .swiper-button-prev {
+    right: 50px;
+}
+.testimonial-line {
+    margin-top: 52px;
+}
+.testimonial-slider {
+    padding-bottom: 72px;
+}
+.testimonial-area{
+    padding: 56px 0 64px;
+}
+.testimonial-slider .swiper-horizontal>.swiper-pagination-bullets, .testimonial-slider .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .testimonial-slider .swiper-pagination-fraction {
+    bottom: 90px;
+}
+/* ==================== 6.testimonial section end ===================== */
+
+/* ==================== 7.our expertise section start===================== */
+.our-expertise-area .section-title-wrapper {
+    padding: 55px 0 20px;
+}
+
+.our-expertise-area .section-title-wrapper .row {
+    --bs-gutter-y: 16px;
+}
+.our-expertise-area  .section-title-caption-info  p {
+    max-width: 100%;
+}
+.our-expertise-area .our-expertise-wrapper  .row {
+    --bs-gutter-y: 24px;
+}
+.expertise-img img {
+    height: 460px;
+    object-fit: cover;
+}
+.our-expertise-area {
+    padding-bottom: 55px;
+}
+
+/* ==================== 7.our expertise section end===================== */
 
 }
 
@@ -185,5 +409,8 @@
 
 /* max-width 383 */
 @media (max-width: 383.98px) {
-  
+    .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card,
+    .portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card {
+        height: 100%;
+    }
 }

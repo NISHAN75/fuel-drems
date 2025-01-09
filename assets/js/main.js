@@ -61,6 +61,7 @@
         let portfolioSlider = new Swiper(".portfolio-slider", {
             slidesPerView: 7,
             spaceBetween: 40,
+            speed: 6000,
             keyboard: {
                 enabled: true,
             },
@@ -118,12 +119,104 @@
             }
         });
 
+        let lastMouseX = 0;
 
+        document.addEventListener('mousemove', (event) => {
+        const currentMouseX = event.clientX;
 
+        if (currentMouseX > lastMouseX + 10) { 
+            portfolioSlider.slideNext();
+        } else if (currentMouseX < lastMouseX - 10) {
+            portfolioSlider.slidePrev();
+        }
+        lastMouseX = currentMouseX;
+        });
 
+        // mobile menu
+        const $mobileMenu = $(".mobile-menu");
+        $mobileMenu.find("ul > li > a").on("click", function (e) {
+            const $menuItem = $(this).closest("li");
 
+            // Remove 'active' class from all other menu items
+            $mobileMenu.find("ul > li").removeClass("active");
+            $menuItem.addClass("active");
+            const $submenu = $(this).siblings(".sub-menu");
 
+            if ($submenu.is(":visible")) {
+                $submenu.slideUp();
+                $menuItem.removeClass("active");
+            } else {
+                // Slide down if not visible
+                $(".sub-menu").slideUp();
+                $(".menu-link > a").removeClass("active");
+                $submenu.stop(true, true).slideDown();
+            }
+            // Prevent default behavior for menu-link class items
+            if ($menuItem.hasClass("menu-link")) {
+                e.preventDefault();
+            }
+        });
+        const $footerMenu = $(".main-footer-wrapper");
+        $footerMenu.find(".footer-title").on("click", function (e) {
+            const $footerItem = $(this).closest(".footer-item");
 
+            // Remove 'active' class from all other menu items
+            $footerMenu.find(".footer-item").removeClass("active");
+            $footerItem.addClass("active");
+            const $footerSubMenu = $(this).siblings(".footer-sub-menu");
+            if ($footerSubMenu.is(":visible")) {
+                $footerSubMenu.slideUp();
+                $footerItem.removeClass("active");
+            } else {
+                // Slide down if not visible
+                $(".footer-sub-menu").slideUp();
+                $footerSubMenu.stop(true, true).slideDown();
+            }
+            // Prevent default behavior for menu-link class items
+            if ($footerItem.hasClass(".footer-menu")) {
+                e.preventDefault();
+            }
+        });
+       
+        // mobile menu
+        // card border animation
+        function initExpertiseCardEffect() {
+            if ($(window).width() >= 992) {
+                $('.card-gradient').on('mouseenter', function (e) {
+                    const card = $(this);
+                    const offset = card.offset();
+                    const height = card.outerHeight();
+                    const y = e.pageY - offset.top;
+                    const yPercent = (y / height) * 100;
+                    card.css({
+                        background: `radial-gradient(circle at 50% ${yPercent}%, rgba(255,197,136,1) 0%, rgba(255,197,136,0) 100%)`
+                    });
+                });
+                
+                $('.card-gradient').on('mousemove', function (e) {
+                    const card = $(this);
+                    const offset = card.offset();
+                    const height = card.outerHeight();
+                    const y = e.pageY - offset.top;
+                    const yPercent = (y / height) * 100;
+                    card.css({
+                        background: `radial-gradient(circle at 50% ${yPercent}%, rgba(255,197,136,1) 0%, rgba(255,197,136,0) 100%)`
+                    });
+                });
+                
+                $('.card-gradient').on('mouseleave', function () {
+                    $(this).css({
+                        background: 'transparent'
+                    });
+                });
+            }
+        }
+        initExpertiseCardEffect();
+        $(window).on('resize', function () {
+            initExpertiseCardEffect();
+        });
+
+        // card border animation
 
         // OverlayScrollbars
         const {
@@ -144,7 +237,7 @@
             });
         });
         // lenis
-        $(".back-top-wrapper").on("click",function(e){e.preventDefault();lenis.scrollTo(0)});
+        $(".back-btn").on("click",function(e){e.preventDefault();lenis.scrollTo(0)});
         // Initialize a new Lenis instance for smooth scrolling
         const lenis = new Lenis();
 
