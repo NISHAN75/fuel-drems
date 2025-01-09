@@ -165,7 +165,12 @@
         //     }
         //     lastMouseX = currentMouseX;
         // });
+        const $myModal = $('#myModal');
+        const $myInput = $('#myInput');
 
+        $myModal.on('shown.bs.modal', function () {
+            $myInput.focus();
+        });
         // mobile menu
         const $mobileMenu = $(".mobile-menu");
         $mobileMenu.find("ul > li > a").on("click", function (e) {
