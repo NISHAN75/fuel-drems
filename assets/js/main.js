@@ -119,18 +119,17 @@
             }
         });
 
-        let lastMouseX = 0;
+        // let lastMouseX = 0;
+        // $(".portfolio-slider").on('mousemove', (event) => {
+        //     const currentMouseX = event.clientX;
 
-        $(".portfolio-slider").on('mousemove', (event) => {
-        const currentMouseX = event.clientX;
-
-        if (currentMouseX > lastMouseX + 10) { 
-            portfolioSlider.slideNext();
-        } else if (currentMouseX < lastMouseX - 10) {
-            portfolioSlider.slidePrev();
-        }
-        lastMouseX = currentMouseX;
-        });
+        //     if (currentMouseX > lastMouseX + 10) { 
+        //         portfolioSlider.slideNext();
+        //     } else if (currentMouseX < lastMouseX - 10) {
+        //         portfolioSlider.slidePrev();
+        //     }
+        //     lastMouseX = currentMouseX;
+        // });
 
         // mobile menu
         const $mobileMenu = $(".mobile-menu");
