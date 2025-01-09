@@ -121,7 +121,7 @@
 
         let lastMouseX = 0;
 
-        document.addEventListener('mousemove', (event) => {
+        $(".portfolio-slider").on('mousemove', (event) => {
         const currentMouseX = event.clientX;
 
         if (currentMouseX > lastMouseX + 10) { 

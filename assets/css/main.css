@@ -810,7 +810,6 @@ h6 {
     opacity: 1;
     visibility: visible;
 }
-
 .portfolio-slider{
     padding-bottom: 90px;
 }
@@ -834,7 +833,7 @@ h6 {
 .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card-info::before {
     background: linear-gradient(180deg, rgba(36, 181, 241, 0.00) 0%, rgba(36, 181, 241, 0.90) 72.8%);
 }
-.portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card:hover::before{
+.portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card-info:hover::before{
     opacity: 1;
     visibility: visible;
 }
