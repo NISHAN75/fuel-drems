@@ -55,20 +55,42 @@
             );
         });
         // animation line
+	// rotate 
+    function aboutCardRotate() {
+        if ($(window).width() > 991) {
+            gsap.to(".rotate-text", {
+                scrollTrigger: {
+                    trigger: "body", 
+                    start: "top top", 
+                    end: "bottom bottom",
+                    scrub: true,
+                },
+                rotation: 360, 
+                ease: "none",
+                transformOrigin: "center center",
+            });
+        }
+    }
+    aboutCardRotate();
+    
+    function reverseCardRotate() {
+        if ($(window).width() > 991) {
+            gsap.to(".rotate-text", {
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top 50%",
+                    end: "bottom top",
+                    scrub: true,
+                },
+                rotation: 360,
+                ease: "power1.out",
+                transformOrigin: "center center",
+                duration: 1
+            });
+        }
+    }
+    reverseCardRotate();
 
-        gsap.to(".rotate-text", {
-            scrollTrigger: {
-              trigger: ".rotate-text-wrapper", // Element that triggers the animation
-              start: "top top",               // Start when the wrapper enters the viewport
-              end: "bottom bottom",           // End when the wrapper leaves the viewport
-              scrub: true,                    // Sync animation with scroll
-            },
-            rotation: () => {
-              const scrollY = window.scrollY; // Get the current scroll position
-              return scrollY / 5;             // Adjust the divisor to control rotation speed
-            },
-            ease: "none",                     // Linear animation for consistent rotation
-          });
   
         // portfolio slider
         let portfolioSlider = new Swiper(".portfolio-slider", {
