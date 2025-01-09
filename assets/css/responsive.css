@@ -120,35 +120,15 @@
 .portfolio-slider {
     padding-bottom: 50px;
 }
-.portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card{
-    height: 450px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card{
-    height: 520px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(2) .portfolio-card{
-    height: 580px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(3) .portfolio-card{
-    height: 480px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(4) .portfolio-card{
-    height: 610px;
-    margin-bottom: -7px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(5) .portfolio-card{
-    height: 525px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(6) .portfolio-card{
-    height: 580px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(7) .portfolio-card{
-    height: 470px;
-}
-.portfolio-slider-wrapper .swiper-slide:nth-child(8) .portfolio-card{
-    height: 535px;
-}
 /* ==================== 5.portfolio section end ===================== */
+
+
+/* ==================== 6.our expertise section start ===================== */
+.portfolio-card:hover ,
+.our-expertise-card:hover {
+    transform: translateY(0px);
+}
+/* ==================== 6.our expertise section end ===================== */
 
 /* ==================== 6.testimonial section start ===================== */
 .testimonial-content blockquote {
@@ -158,6 +138,8 @@
     max-width: 600px;
 }
 /* ==================== 6.testimonial section end ===================== */
+
+
 /* ==================== 7.footer section start===================== */
 .footer-area {
     position: relative;
@@ -213,6 +195,12 @@
     .tp-brand-area::before {
         width: 150px;
     }
+    /* ==================== 5.portfolio section start ===================== */
+    .portfolio-card-content {
+        left: -20px;
+    }
+    /* ==================== 5.portfolio section start ===================== */
+
     /* ==================== 6.testimonial section start ===================== */
     .testimonial-content img {
         margin-bottom: 15px;
@@ -228,41 +216,7 @@
     }
     /* ==================== 6.testimonial section end ===================== */
 
-    /* ==================== 5.portfolio section start ===================== */
-    .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card{
-        height: 400px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card {
-        height: 470px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(2) .portfolio-card {
-        height: 530px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(3) .portfolio-card{
-        height: 440px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(4) .portfolio-card{
-        height: 530px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(5) .portfolio-card {
-        height: 490px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(6) .portfolio-card {
-        height: 530px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(7) .portfolio-card{
-        height: 430px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(8) .portfolio-card{
-        height: 490px;
-    }
-    .portfolio-slider {
-        padding-bottom: 64px;
-    }
-    .portfolio-slider-wrapper {
-        padding-bottom: 24px;
-    }
-/* ==================== 5.portfolio section end ===================== */
+
     
 }
 
@@ -313,35 +267,38 @@
     .portfolio-area .section-title-wrapper{
         padding-bottom: 30px;
     }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card{
-        height: 350px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card {
-        height: 360px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(2) .portfolio-card {
-        height: 410px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(3) .portfolio-card{
-        height: 340px;
-    }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(4) .portfolio-card{
+    .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card .portfolio-card-img{
         height: 420px;
     }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(5) .portfolio-card {
-        height: 380px;
+    .portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card .portfolio-card-img {
+        height: 420px;
     }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(6) .portfolio-card {
-        height: 410px;
+    .portfolio-slider-wrapper .swiper-slide:nth-child(2) .portfolio-card .portfolio-card-img {
+        height: 507px;
     }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(7) .portfolio-card{
-        height: 330px;
+    .portfolio-slider-wrapper .swiper-slide:nth-child(3) .portfolio-card .portfolio-card-img{
+        height: 420px;
     }
-    .portfolio-slider-wrapper .swiper-slide:nth-child(8) .portfolio-card{
-        height: 380px;
+    .portfolio-slider-wrapper .swiper-slide:nth-child(4) .portfolio-card .portfolio-card-img{
+        height: 520px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(5) .portfolio-card .portfolio-card-img{
+        height: 470px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(6) .portfolio-card  .portfolio-card-img{
+        height: 450px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(7) .portfolio-card .portfolio-card-img{
+        height: 430px;
+    }
+    .portfolio-slider-wrapper .swiper-slide:nth-child(8) .portfolio-card .portfolio-card-img{
+        height: 507px;
     }
     .portfolio-slider  .swiper-icon-btn{
         display: none;
+    }
+    .portfolio-card-content h5 {
+        font-size: 20px;
     }
 /* ==================== 5.portfolio section end ===================== */
 
@@ -386,7 +343,7 @@
     max-width: 100%;
 }
 .our-expertise-area .our-expertise-wrapper  .row {
-    --bs-gutter-y: 24px;
+    --bs-gutter-y: 20px;
 }
 .expertise-img img {
     height: 460px;
@@ -403,14 +360,14 @@
 /* max-width 479 */
 @media (max-width: 479.98px) {
 
- 
-
+    /* ==================== 5.portfolio section end ===================== */
+    .portfolio-card-content {
+        left: -25px;
+    }
+    /* ==================== 5.portfolio section end ===================== */
 }
 
 /* max-width 383 */
 @media (max-width: 383.98px) {
-    .portfolio-slider-wrapper .swiper-slide:nth-child(even) .portfolio-card,
-    .portfolio-slider-wrapper .swiper-slide:nth-child(1) .portfolio-card {
-        height: 100%;
-    }
+
 }
