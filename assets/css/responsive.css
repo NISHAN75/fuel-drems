@@ -49,6 +49,15 @@
     .tp-brand-area::before {
         width: calc(50% - 300px);
     }
+
+    /* modal */
+    .popup-img-wrapper {
+        margin-left: 0;
+    }
+    .modal-content-wrapper {
+        gap: 24px;
+    }
+    /* modal */
     /* ==================== 5.portfolio section start ===================== */
     .portfolio-area .section-title-caption-info {
         flex-direction: column;
@@ -77,18 +86,29 @@
         --bs-gutter-y: 30px;
     }
     /* all padding */
+    .our-expertise-area .section-title-wrapper,
     .testimonial-area ,
     .portfolio-area .section-title-wrapper {
         padding: 50px 0;
     }
     /* all padding */
     
-    
+       /* modal */ 
+       .modal-content-wrapper {
+            flex-direction: column-reverse;
+        }
+        .popup-img-wrapper {
+            max-width: 100%;
+        }
+        .modal-inner-content {
+            max-width: 100%;
+        }
+       /* modal */ 
 
 /* ==================== 3.banner section start ===================== */
 .banner-area {
     min-height: 740px;
-    padding-bottom: 60px;
+    padding-bottom: 55px;
 }
 .banner-content p {
     font-size: 18px;
@@ -97,7 +117,7 @@
 .banner-area::before{
     display: none;
 }
-.banner-area::after {
+.banner-bg-info::before {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 39.05%, #000 52.57%);
     mix-blend-mode: multiply;
 }
@@ -118,8 +138,12 @@
     --bs-gutter-y: 10px;
 }
 .portfolio-slider {
-    padding-bottom: 50px;
+    padding-bottom: 64px;
 }
+.portfolio-slider-wrapper {
+    padding-bottom: 24px;
+}
+
 /* ==================== 5.portfolio section end ===================== */
 
 
@@ -150,6 +174,20 @@
 .section-title-caption-info::before{
     display: none;
 }
+.section-title-caption-info .btn-wrapper {
+    margin-top: 15px;
+}
+.our-expertise-area  .section-title-caption-info ,
+.portfolio-area  .section-title-caption-info  p ,
+.section-title-caption-info {
+    max-width: 100%;
+}
+.our-expertise-area  .section-title-caption-info {
+    margin-right: 0;
+}
+.our-expertise-content {
+    bottom: 0;
+}
 /* ==================== 6.our expertise section end ===================== */
 
 /* ==================== 6.testimonial section start ===================== */
@@ -158,6 +196,10 @@
 }
 .testimonial-content {
     max-width: 600px;
+}
+.testimonial-area  .container {
+    padding-right: 24px;
+    padding-left: 24px;
 }
 /* ==================== 6.testimonial section end ===================== */
 
@@ -217,15 +259,12 @@
     .tp-brand-area::before {
         width: 150px;
     }
-    /* ==================== 5.portfolio section start ===================== */
-    .portfolio-card-content {
-        left: -20px;
-    }
-    /* ==================== 5.portfolio section start ===================== */
+
+    
 
     /* ==================== 6.testimonial section start ===================== */
     .testimonial-content img {
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
     .testimonial-content {
         max-width: 400px;
@@ -244,6 +283,29 @@
 
 /* max-width 575 */
 @media (max-width: 575.98px) {
+
+
+    /* modal */ 
+    .modal-header {
+        padding: 23px 12px;
+    }
+    .modal-body {
+        padding: 16px 12px;
+        padding-top: 0;
+    }
+    .modal-title-logo {
+        margin-bottom: 28px;
+    }
+    .modal-inner-content p {
+        letter-spacing: 0.9px;
+    }
+    .modal-inner-content .btn-wrapper {
+        margin-top: 4px;
+    }
+    .modal-content-wrapper {
+        gap: 30px;
+    }
+    /* modal */ 
     .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
         width: 100%;
     }
@@ -319,8 +381,8 @@
     .portfolio-slider  .swiper-icon-btn{
         display: none;
     }
-    .portfolio-card-content h5 {
-        font-size: 20px;
+    .portfolio-card-content {
+        left: calc(50% - 50px);
     }
 /* ==================== 5.portfolio section end ===================== */
 
@@ -374,7 +436,10 @@
 .our-expertise-area {
     padding-bottom: 55px;
 }
-
+.our-expertise-content h5 {
+    font-size: 21.4px;
+    letter-spacing: 3.21px;
+}
 /* ==================== 7.our expertise section end===================== */
 
 }
@@ -382,11 +447,7 @@
 /* max-width 479 */
 @media (max-width: 479.98px) {
 
-    /* ==================== 5.portfolio section end ===================== */
-    .portfolio-card-content {
-        left: -25px;
-    }
-    /* ==================== 5.portfolio section end ===================== */
+
 }
 
 /* max-width 383 */
