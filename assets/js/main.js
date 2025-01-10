@@ -1,98 +1,95 @@
 (function ($) {
-    $(document).ready(function () {
-       
+	$(document).ready(function () {
 
- 
-        // animation
-        gsap.registerPlugin(SplitText, ScrollTrigger);
-        let textWrappers = $(".animation-text");
 
-        // Split text into lines and letters
-        let mainTitleSplit = new SplitText(textWrappers, {
-            type: "lines,chars",
-            linesClass: "line-wrapper overflow-hidden",
-            charsClass: "letter",
-            tag: "span"
-        });
+		// animation
+		gsap.registerPlugin(SplitText, ScrollTrigger);
+		let textWrappers = $(".animation-text");
 
-        // Animate each line's letters
-        $(".line-wrapper").each(function () {
-            let letters = $(this).find(".letter");
-            gsap.from(letters, {
-                scrollTrigger: {
-                    trigger: this,
-                    start: "top bottom",
-                    end: "bottom top",
-                    toggleActions: "play none none reverse",
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.5,
-                stagger: 0.04,
-                ease: "power3.inOut"
-            });
-        });
-        // animation line
-        gsap.utils.toArray(".animation-line").forEach((element) => {
-            gsap.fromTo(
-                element,
-                {
-                    y: 100,
-                    opacity: 0,
-                },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.5,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 90%",
-                        toggleActions: "play none none reverse",
+		// Split text into lines and letters
+		let mainTitleSplit = new SplitText(textWrappers, {
+			type: "lines,chars",
+			linesClass: "line-wrapper overflow-hidden",
+			charsClass: "letter",
+			tag: "span"
+		});
 
-                    },
-                }
-            );
-        });
-        // animation line
-	// rotate 
-    function aboutCardRotate() {
-        if ($(window).width() > 991) {
-            gsap.to(".rotate-text", {
-                scrollTrigger: {
-                    trigger: "body", 
-                    start: "top top", 
-                    end: "bottom bottom",
-                    scrub: true,
-                },
-                rotation: 360, 
-                ease: "none",
-                transformOrigin: "center center",
-            });
-        }
-    }
-    aboutCardRotate();
-    
-    function reverseCardRotate() {
-        if ($(window).width() > 991) {
-            gsap.to(".rotate-text", {
-                scrollTrigger: {
-                    trigger: "body",
-                    start: "top 50%",
-                    end: "bottom top",
-                    scrub: true,
-                },
-                rotation: 360,
-                ease: "power1.out",
-                transformOrigin: "center center",
-                duration: 1
-            });
-        }
-    }
-    reverseCardRotate();
+		// Animate each line's letters
+		$(".line-wrapper").each(function () {
+			let letters = $(this).find(".letter");
+			gsap.from(letters, {
+				scrollTrigger: {
+					trigger: this,
+					start: "top bottom",
+					end: "bottom top",
+					toggleActions: "play none none reverse",
+				},
+				y: 50,
+				opacity: 0,
+				duration: 0.5,
+				stagger: 0.04,
+				ease: "power3.inOut"
+			});
+		});
+		// animation line
+		gsap.utils.toArray(".animation-line").forEach((element) => {
+			gsap.fromTo(
+				element, {
+					y: 100,
+					opacity: 0,
+				}, {
+					y: 0,
+					opacity: 1,
+					duration: 1.5,
+					ease: "power2.out",
+					scrollTrigger: {
+						trigger: element,
+						start: "top 90%",
+						toggleActions: "play none none reverse",
 
-  		// Magnific popup
-          $('.trigger-popup').magnificPopup({
+					},
+				}
+			);
+		});
+		// animation line
+		// rotate  logo
+		function aboutCardRotate() {
+			if ($(window).width() > 991) {
+				gsap.to(".rotate-text", {
+					scrollTrigger: {
+						trigger: "body",
+						start: "top top",
+						end: "bottom bottom",
+						scrub: true,
+					},
+					rotation: 360,
+					ease: "none",
+					transformOrigin: "center center",
+				});
+			}
+		}
+		aboutCardRotate();
+
+		function reverseCardRotate() {
+			if ($(window).width() > 991) {
+				gsap.to(".rotate-text", {
+					scrollTrigger: {
+						trigger: "body",
+						start: "top 50%",
+						end: "bottom top",
+						scrub: true,
+					},
+					rotation: 360,
+					ease: "power1.out",
+					transformOrigin: "center center",
+					duration: 1
+				});
+			}
+		}
+		reverseCardRotate();
+
+		// Magnific popup
+		$('.trigger-popup').magnificPopup({
 			type: 'iframe',
 			iframe: {
 				markup: '<div class="mfp-iframe-scaler">' +
@@ -121,215 +118,244 @@
 				}
 			},
 		});
-        $(document).on('mfpOpen', function () {
-            $(".mfp-close").text("X");
-        });
-        // portfolio slider
-        let portfolioSlider = new Swiper(".portfolio-slider", {
-            slidesPerView: 7,
-            spaceBetween: 40,
-            speed: 6000,
-            keyboard: {
-                enabled: true,
-            },
-            // Responsive breakpoints
-            breakpoints: {
-                // when window width is >= 640px
-                0: {
-                    slidesPerView: 3,
-                    spaceBetween: 32,
-                },
-                480: {
-                    slidesPerView: 4,
-                    spaceBetween: 32,
-                },
-                768: {
-                    slidesPerView: 5,
-                    spaceBetween: 32,
-                },
-                1200: {
-                    slidesPerView: 7,
-                    spaceBetween: 40,
-                },
-            },
-            scrollbar: {
-                el: ".swiper-scrollbar",
-              },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },  
-        });
-        // testimonial slider
-        var testimonialSlider = new Swiper(".testimonial-slider", {
-            cssMode: true,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-              el: ".swiper-pagination",
-            },
-            mousewheel: true,
-            keyboard: true,
-        });
-        // brand slider 
-        let brandSlider = new Swiper(".tp-brand-slider", {
-            slidesPerView: "auto",
-            loop:true,
-            spaceBetween: 56,
-            allowTouchMove:false,
-            speed:4000,
-            autoplay:{
-            delay:1,
-            disableOnInteraction:true,
-            }
-        });
+		// portfolio slider
+		let portfolioSlider = new Swiper(".portfolio-slider", {
+			slidesPerView: 7,
+			spaceBetween: 40,
+			speed: 6000,
+			keyboard: {
+				enabled: true,
+			},
+			// Responsive breakpoints
+			breakpoints: {
+				// when window width is >= 640px
+				0: {
+					slidesPerView: 3,
+					spaceBetween: 32,
+				},
+				480: {
+					slidesPerView: 4,
+					spaceBetween: 32,
+				},
+				768: {
+					slidesPerView: 5,
+					spaceBetween: 32,
+				},
+				1200: {
+					slidesPerView: 7,
+					spaceBetween: 40,
+				},
+			},
+			scrollbar: {
+				el: ".swiper-scrollbar",
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+		// testimonial slider
+		var testimonialSlider = new Swiper(".testimonial-slider", {
+			cssMode: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			pagination: {
+				el: ".swiper-pagination",
+			},
+			mousewheel: true,
+			keyboard: true,
+		});
+		// brand slider 
+		let brandSlider = new Swiper(".tp-brand-slider", {
+			slidesPerView: "auto",
+			loop: true,
+			spaceBetween: 56,
+			allowTouchMove: false,
+			speed: 4000,
+			autoplay: {
+				delay: 1,
+				disableOnInteraction: true,
+			}
+		});
+        // slider move
+		// let lastMouseX = 0;
+		// $(".portfolio-slider").on('mousemove', (event) => {
+		//     const currentMouseX = event.clientX;
 
-        // let lastMouseX = 0;
-        // $(".portfolio-slider").on('mousemove', (event) => {
-        //     const currentMouseX = event.clientX;
+		//     if (currentMouseX > lastMouseX + 10) { 
+		//         portfolioSlider.slideNext();
+		//     } else if (currentMouseX < lastMouseX - 10) {
+		//         portfolioSlider.slidePrev();
+		//     }
+		//     lastMouseX = currentMouseX;
+		// });
+		const $myModal = $('#myModal');
+		const $myInput = $('#myInput');
 
-        //     if (currentMouseX > lastMouseX + 10) { 
-        //         portfolioSlider.slideNext();
-        //     } else if (currentMouseX < lastMouseX - 10) {
-        //         portfolioSlider.slidePrev();
-        //     }
-        //     lastMouseX = currentMouseX;
-        // });
-        const $myModal = $('#myModal');
-        const $myInput = $('#myInput');
+		$myModal.on('shown.bs.modal', function () {
+			$myInput.focus();
+		});
+		// mobile menu
+		const $mobileMenu = $(".mobile-menu");
+		$mobileMenu.find("ul > li > a").on("click", function (e) {
+			const $menuItem = $(this).closest("li");
 
-        $myModal.on('shown.bs.modal', function () {
-            $myInput.focus();
-        });
-        // mobile menu
-        const $mobileMenu = $(".mobile-menu");
-        $mobileMenu.find("ul > li > a").on("click", function (e) {
-            const $menuItem = $(this).closest("li");
+			// Remove 'active' class from all other menu items
+			$mobileMenu.find("ul > li").removeClass("active");
+			$menuItem.addClass("active");
+			const $submenu = $(this).siblings(".sub-menu");
 
-            // Remove 'active' class from all other menu items
-            $mobileMenu.find("ul > li").removeClass("active");
-            $menuItem.addClass("active");
-            const $submenu = $(this).siblings(".sub-menu");
+			if ($submenu.is(":visible")) {
+				$submenu.slideUp();
+				$menuItem.removeClass("active");
+			} else {
+				// Slide down if not visible
+				$(".sub-menu").slideUp();
+				$(".menu-link > a").removeClass("active");
+				$submenu.stop(true, true).slideDown();
+			}
+			// Prevent default behavior for menu-link class items
+			if ($menuItem.hasClass("menu-link")) {
+				e.preventDefault();
+			}
+		});
+		const $footerMenu = $(".main-footer-wrapper");
+		$footerMenu.find(".footer-title").on("click", function (e) {
+			const $footerItem = $(this).closest(".footer-item");
 
-            if ($submenu.is(":visible")) {
-                $submenu.slideUp();
-                $menuItem.removeClass("active");
-            } else {
-                // Slide down if not visible
-                $(".sub-menu").slideUp();
-                $(".menu-link > a").removeClass("active");
-                $submenu.stop(true, true).slideDown();
-            }
-            // Prevent default behavior for menu-link class items
-            if ($menuItem.hasClass("menu-link")) {
-                e.preventDefault();
-            }
-        });
-        const $footerMenu = $(".main-footer-wrapper");
-        $footerMenu.find(".footer-title").on("click", function (e) {
-            const $footerItem = $(this).closest(".footer-item");
+			// Remove 'active' class from all other menu items
+			$footerMenu.find(".footer-item").removeClass("active");
+			$footerItem.addClass("active");
+			const $footerSubMenu = $(this).siblings(".footer-sub-menu");
+			if ($footerSubMenu.is(":visible")) {
+				$footerSubMenu.slideUp();
+				$footerItem.removeClass("active");
+			} else {
+				// Slide down if not visible
+				$(".footer-sub-menu").slideUp();
+				$footerSubMenu.stop(true, true).slideDown();
+			}
+			// Prevent default behavior for menu-link class items
+			if ($footerItem.hasClass(".footer-menu")) {
+				e.preventDefault();
+			}
+		});
 
-            // Remove 'active' class from all other menu items
-            $footerMenu.find(".footer-item").removeClass("active");
-            $footerItem.addClass("active");
-            const $footerSubMenu = $(this).siblings(".footer-sub-menu");
-            if ($footerSubMenu.is(":visible")) {
-                $footerSubMenu.slideUp();
-                $footerItem.removeClass("active");
-            } else {
-                // Slide down if not visible
-                $(".footer-sub-menu").slideUp();
-                $footerSubMenu.stop(true, true).slideDown();
-            }
-            // Prevent default behavior for menu-link class items
-            if ($footerItem.hasClass(".footer-menu")) {
-                e.preventDefault();
-            }
-        });
-       
-        // mobile menu
-        // card border animation
-        function initExpertiseCardEffect() {
-            if ($(window).width() >= 992) {
-                $('.card-gradient').on('mouseenter', function (e) {
-                    const card = $(this);
-                    const offset = card.offset();
-                    const height = card.outerHeight();
-                    const y = e.pageY - offset.top;
-                    const yPercent = (y / height) * 100;
-                    card.css({
-                        background: `radial-gradient(circle at 50% ${yPercent}%, rgba(255,197,136,1) 0%, rgba(255,197,136,0) 100%)`
-                    });
-                });
-                
-                $('.card-gradient').on('mousemove', function (e) {
-                    const card = $(this);
-                    const offset = card.offset();
-                    const height = card.outerHeight();
-                    const y = e.pageY - offset.top;
-                    const yPercent = (y / height) * 100;
-                    card.css({
-                        background: `radial-gradient(circle at 50% ${yPercent}%, rgba(255,197,136,1) 0%, rgba(255,197,136,0) 100%)`
-                    });
-                });
-                
-                $('.card-gradient').on('mouseleave', function () {
-                    $(this).css({
-                        background: 'transparent'
-                    });
-                });
-            }
-        }
-        initExpertiseCardEffect();
-        $(window).on('resize', function () {
-            initExpertiseCardEffect();
-        });
+		// mobile menu
+		// card border animation
+		function initExpertiseCardEffect() {
+			if ($(window).width() >= 992) {
+				$('.card-gradient').on('mouseenter', function (e) {
+					const card = $(this);
+					const offset = card.offset();
+					const height = card.outerHeight();
+					const y = e.pageY - offset.top;
+					const yPercent = (y / height) * 100;
+					card.css({
+						background: `radial-gradient(circle at 50% ${yPercent}%, rgba(255,197,136,1) 0%, rgba(255,197,136,0) 100%)`
+					});
+				});
 
-        // card border animation
+				$('.card-gradient').on('mousemove', function (e) {
+					const card = $(this);
+					const offset = card.offset();
+					const height = card.outerHeight();
+					const y = e.pageY - offset.top;
+					const yPercent = (y / height) * 100;
+					card.css({
+						background: `radial-gradient(circle at 50% ${yPercent}%, rgba(255,197,136,1) 0%, rgba(255,197,136,0) 100%)`
+					});
+				});
 
-        // OverlayScrollbars
-        const {
-            OverlayScrollbars,
-            ClickScrollPlugin
-        } = OverlayScrollbarsGlobal;
-        // Initialize the ClickScrollPlugin
-        OverlayScrollbars.plugin(ClickScrollPlugin);
-        $("body").each(function () {
-            OverlayScrollbars(this, {
-                scrollbars: {
-                    clickScroll: true,
-                    autoHide: "leave",
-                    dragScrolling: true,
-                    clickScrolling: true,
-                },
-                scrollBehavior: 'smooth',
-            });
-        });
-        // lenis
-        $(".back-btn").on("click",function(e){e.preventDefault();lenis.scrollTo(0)});
-        // Initialize a new Lenis instance for smooth scrolling
-        const lenis = new Lenis();
+				$('.card-gradient').on('mouseleave', function () {
+					$(this).css({
+						background: 'transparent'
+					});
+				});
+			}
+		}
+		initExpertiseCardEffect();
+		$(window).on('resize', function () {
+			initExpertiseCardEffect();
+		});
+		// card border animation
 
-        // Listen for the 'scroll' event and log the event data to the console
-        // lenis.on('scroll', (e) => {
-        //     console.log(e);
-        // });
+        // animation div
+        
+        // Select all elements with the class 'animation-div'
+		const animationDivs = document.querySelectorAll('.animation-div');
 
-        // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-        lenis.on('scroll', ScrollTrigger.update);
+		// Set initial styles for each animation div
+		animationDivs.forEach(div => {
+			gsap.set(div, {
+				opacity: 0,
+				filter: 'blur(6px)',
+				transform: 'translateY(6px)',
+				willChange: 'transform, opacity, filter'
+			});
 
-        // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-        // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-        });
+			// Animate the divs when they come into view
+			gsap.to(div, {
+				opacity: 1,
+				filter: 'blur(0px)',
+				transform: 'translateY(0px)',
+				willChange: 'auto',
+				duration: 1,
+				scrollTrigger: {
+					trigger: div,
+					start: 'top 70%',
+					end: 'bottom top',
+				}
+			});
+		});
+        // animation div
 
-        // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-        gsap.ticker.lagSmoothing(0);
-        // lenis
+		// OverlayScrollbars
+		const {
+			OverlayScrollbars,
+			ClickScrollPlugin
+		} = OverlayScrollbarsGlobal;
+		// Initialize the ClickScrollPlugin
+		OverlayScrollbars.plugin(ClickScrollPlugin);
+		$("body").each(function () {
+			OverlayScrollbars(this, {
+				scrollbars: {
+					clickScroll: true,
+					autoHide: "leave",
+					dragScrolling: true,
+					clickScrolling: true,
+				},
+				scrollBehavior: 'smooth',
+			});
+		});
+		// lenis
+		$(".back-btn").on("click", function (e) {
+			e.preventDefault();
+			lenis.scrollTo(0)
+		});
+		// Initialize a new Lenis instance for smooth scrolling
+		const lenis = new Lenis();
+
+		// Listen for the 'scroll' event and log the event data to the console
+		// lenis.on('scroll', (e) => {
+		//     console.log(e);
+		// });
+
+		// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+		lenis.on('scroll', ScrollTrigger.update);
+
+		// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+		// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+		gsap.ticker.add((time) => {
+			lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+		});
+
+		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+		gsap.ticker.lagSmoothing(0);
+		// lenis
 
 
-    });
+	});
 })(jQuery);
