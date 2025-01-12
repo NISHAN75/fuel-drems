@@ -1,15 +1,63 @@
 (function ($) {
 	$(document).ready(function () {
 
+		$('.btn-wrapper').each(function () {
+			// Get dimensions of the button
+			const $btn = $(this);
+			const width = $btn.outerWidth();
+			const height = $btn.outerHeight();
 
-		// animation
+			const dasharrayPart1 = 150;
+			const dasharrayPart2 = 2 * (width + height) + dasharrayPart1;
+			const strokeDasharray = `${dasharrayPart1} ${dasharrayPart2}`;
+			const initialOffset = dasharrayPart1;
+			const hoverOffset = -dasharrayPart2;
+
+			// Target SVG and its properties
+			const $svg = $btn.find('.dynamic-svg');
+			const $bgLine = $svg.find('.bg-line');
+			const $hlLine = $svg.find('.hl-line');
+
+			// Calculate and set polyline points
+			const points = `${width - 1},1 ${width - 1},${height - 1} 1,${height - 1} 1,1 ${width - 1},1`;
+			$svg.attr({
+				width: `${width}px`,
+				height: `${height}px`,
+				viewBox: `0 0 ${width} ${height}`,
+			});
+
+			$bgLine.attr('points', points);
+			$hlLine.attr('points', points);
+
+			// Set initial SVG stroke properties
+			$svg.css({
+				strokeDasharray: strokeDasharray,
+				strokeDashoffset: initialOffset,
+				transition: 'stroke-dashoffset 0.6s linear',
+			});
+
+			// Hover effects
+			$btn.hover(
+				function () {
+					$svg.css('stroke-dashoffset', hoverOffset); // On hover: offset reduces dynamically
+				},
+				function () {
+					$svg.css('stroke-dashoffset', initialOffset); // On hover out: reset to initial
+				}
+			);
+		});
+
+
+
+
+
 		gsap.registerPlugin(SplitText, ScrollTrigger);
 		let textWrappers = $(".animation-text");
 
 		// Split text into lines and letters
 		let mainTitleSplit = new SplitText(textWrappers, {
 			type: "lines,chars",
-			linesClass: "line-wrapper overflow-hidden",
+			linesClass: "line-wrapper",
 			charsClass: "letter",
 			tag: "span"
 		});
@@ -32,26 +80,6 @@
 			});
 		});
 		// animation line
-		gsap.utils.toArray(".animation-line").forEach((element) => {
-			gsap.fromTo(
-				element, {
-					y: 100,
-					opacity: 0,
-				}, {
-					y: 0,
-					opacity: 1,
-					duration: 1.5,
-					ease: "power2.out",
-					scrollTrigger: {
-						trigger: element,
-						start: "top 90%",
-						toggleActions: "play none none reverse",
-
-					},
-				}
-			);
-		});
-		// animation line
 		// rotate  logo
 		function aboutCardRotate() {
 			if ($(window).width() > 991) {
@@ -62,7 +90,7 @@
 						end: "bottom bottom",
 						scrub: true,
 					},
-					rotation: 360,
+					rotation: 720,
 					ease: "none",
 					transformOrigin: "center center",
 				});
@@ -126,9 +154,8 @@
 			keyboard: {
 				enabled: true,
 			},
-			// Responsive breakpoints
+			freeMode: true, // Allow smooth dragging
 			breakpoints: {
-				// when window width is >= 640px
 				0: {
 					slidesPerView: 3,
 					spaceBetween: 32,
@@ -148,13 +175,32 @@
 			},
 			scrollbar: {
 				el: ".swiper-scrollbar",
+				draggable: true,
 			},
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
 			},
 		});
-		// testimonial slider
+		// Custom mousemove behavior using jQuery
+		const sliderContainer = $(".portfolio-slider");
+		const wrapperEl = $(portfolioSlider.wrapperEl);
+
+		sliderContainer.on("mousemove", function (e) {
+			const sliderRect = sliderContainer[0].getBoundingClientRect();
+			const mouseX = e.clientX - sliderRect.left; // Mouse position relative to slider
+			const percentage = mouseX / sliderRect.width; // Get percentage of mouse position in container
+
+			// Move the slider based on mouse position
+			const maxTranslate = wrapperEl[0].scrollWidth - sliderRect.width; // Max scrollable area
+			const translateX = maxTranslate * percentage;
+
+			// Set the translate manually using Swiper's method
+			portfolioSlider.setTranslate(-translateX);
+		});
+
+
+		// Initialize Swiper
 		var testimonialSlider = new Swiper(".testimonial-slider", {
 			cssMode: true,
 			navigation: {
@@ -163,10 +209,18 @@
 			},
 			pagination: {
 				el: ".swiper-pagination",
+				clickable: true, // Allows bullets to be clickable
 			},
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			loop: true,
 			mousewheel: true,
 			keyboard: true,
 		});
+
+
 		// brand slider 
 		let brandSlider = new Swiper(".tp-brand-slider", {
 			slidesPerView: "auto",
@@ -179,18 +233,7 @@
 				disableOnInteraction: true,
 			}
 		});
-        // slider move
-		// let lastMouseX = 0;
-		// $(".portfolio-slider").on('mousemove', (event) => {
-		//     const currentMouseX = event.clientX;
 
-		//     if (currentMouseX > lastMouseX + 10) { 
-		//         portfolioSlider.slideNext();
-		//     } else if (currentMouseX < lastMouseX - 10) {
-		//         portfolioSlider.slidePrev();
-		//     }
-		//     lastMouseX = currentMouseX;
-		// });
 		const $myModal = $('#myModal');
 		const $myInput = $('#myInput');
 
@@ -282,9 +325,9 @@
 		});
 		// card border animation
 
-        // animation div
-        
-        // Select all elements with the class 'animation-div'
+		// animation div
+
+		// Select all elements with the class 'animation-div'
 		const animationDivs = document.querySelectorAll('.animation-div');
 
 		// Set initial styles for each animation div
@@ -305,12 +348,12 @@
 				duration: 1,
 				scrollTrigger: {
 					trigger: div,
-					start: 'top 70%',
+					start: 'top bottom',
 					end: 'bottom top',
 				}
 			});
 		});
-        // animation div
+		// animation div
 
 		// OverlayScrollbars
 		const {
@@ -355,6 +398,7 @@
 		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
 		gsap.ticker.lagSmoothing(0);
 		// lenis
+
 
 
 	});

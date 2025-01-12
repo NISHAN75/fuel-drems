@@ -185,7 +185,11 @@ input:focus , textarea:focus{
 }
 /* input */
 
-
+/* font color  */
+.zeus-color{
+    color: #231F20;
+}
+/* font color  */
 
 .animation-line p:last-child,
 .mb-p p:last-child{
@@ -249,24 +253,16 @@ h6 {
     background-color: transparent;
     transition: 0.3s ease-in-out;
 }
-.btn-inner-info  svg {
+.btn-inner-info svg {
     position: absolute;
     left: 0px;
     top: 0px;
     fill: none;
-    stroke: #D8A876;
-    stroke-dasharray: 150 480;
-    stroke-dashoffset: 150;
+    stroke-width: 3px;
+    stroke: #FFC588;
     transition: 1s ease-in-out;
 }
-.btn-inner-info:hover {
-    background-color: #434B56;
-    transition: 0.3s ease-in-out;
-}
-.btn-inner-info:hover svg {
-    stroke-dashoffset: -480;
-}
-  
+
   
 /* all button end */
 /* swiper section start */
@@ -344,9 +340,7 @@ h6 {
     background: rgba(154, 181, 202, 0.5);
     opacity: 1;
 }
-.swiper-pagination-bullet-active{
-    background: linear-gradient(90deg, #9AB5CA 41.05%, rgba(154, 181, 202, 0.00) 50.03%), #C5D3DD;
-}
+
 /* swiper section end */
 .line-gradient{
     height: 1px;
@@ -713,9 +707,9 @@ h6 {
     top: 0;
     height: 100%;
     width: 100%;
-    object-fit: cover;
     z-index: 2;
     opacity: 0.5;
+    object-fit: cover;
 }
 
 .banner-area::before{
@@ -779,9 +773,25 @@ h6 {
     width: 100%;
     background-color: #9AB5CA;
 }
+
+/* small banner */
+.banner-area.small-banner {
+    min-height: 500px;
+    padding: 150px 0 65px;
+}
+.small-banner .banner-shap-img {
+    left: -219px;
+    top: -60px;
+    height: calc(100% + 60px);
+    width: 1113px;
+}
+/* small banner */
 /* ==================== 3.banner section end ===================== */
 
 /* ==================== 4.our Journey section start ===================== */
+.our-Journey-content-wrapper {
+    padding-top: 20px;
+}
 .our-Journey-section{
     padding-bottom:60px;
 }
@@ -843,7 +853,7 @@ h6 {
     margin-top: 30px;
 }
 .our-Journey-content-item {
-    margin-top: 56px;
+    margin-top: 50px;
 }
 .our-Journey-content-info {
     max-width: 585px;
@@ -856,10 +866,10 @@ h6 {
 .our-Journey-content-info .btn-wrapper{
     margin-top: 40px;
 }
-.divider-line{
+.divider-line {
     background: rgb(154,181,202);
     background: radial-gradient(circle, rgba(154,181,202,1) 0%, rgba(154,181,202,0) 100%);
-    height: 1px;
+    height: 2px;
     width: 100%;
     display: inline-block;
 }
@@ -997,6 +1007,7 @@ h6 {
 }
 .portfolio-slider .swiper-wrapper {
     align-items: end;
+    transition-duration: 1s !important;
 }
 .portfolio-shape-img {
     position: absolute;
@@ -1113,6 +1124,31 @@ h6 {
     background: rgb(154,181,202);
     background: radial-gradient(circle, rgba(154,181,202,1) 0%, rgba(154,181,202,0) 100%);
     height: 1px;
+}
+.swiper-pagination-bullet {
+    position: relative;
+}
+.swiper-pagination-bullet:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #9AB5CA;
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.swiper-pagination-bullet-active:after {
+    animation: expandWidth 5s linear forwards;
 }
 /* ==================== 6.testimonial section end===================== */
 
@@ -1415,3 +1451,100 @@ h6 {
     z-index: 1;
 }
 /* ==================== 7.footer section end===================== */
+
+
+/*################# new file create  #############################*/
+
+/* ==================== 8.partnership section start===================== */
+.partnership-area {
+    padding: 110px 0 40px;
+}
+.partnership-area .partnership-content{
+    max-width: 725px;
+}
+.partnership-area .partnership-content h2{
+    margin-bottom: 20px;
+}
+.partnership-area .partnership-content p{
+    color: #231F20;
+    font-family: "Roboto", serif;
+}
+
+/* ==================== 8.partnership section end===================== */
+
+/* ==================== 8.partnership card section start===================== */
+.partnership-card-wrapper {
+    padding: 140px 0 128px;
+}
+.partnership-card-wrapper .row{
+    --bs-gutter-x:40px;
+    --bs-gutter-y:51px;
+}
+
+.partnership-card{
+    padding: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+.partnership-card-info {
+    border-radius: 4px;
+    background: linear-gradient(0deg, #131516 0%, #131516 100%);
+    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.50);
+    padding: 88px 0 10px;
+    height: 100%;
+    width: 100%;
+    min-height: 412px;
+    transition: all 0.3s ease-in-out;
+}
+.partnership-card-icon {
+    height: 176px;
+    width: 176px;
+    border-radius: 100%;
+    border: 2px solid #9AB5CA;
+    background: linear-gradient(0deg, #131516 0%, #131516 100%);
+    filter: drop-shadow(0px 0px 25px #9AB5CA);
+    transition: all 0.3s ease-in-out;
+}
+.partnership-card-content {
+    margin-top: 47px;
+    transform: translateY(0);
+    min-height: 93px;
+    gap: 18px;
+    transition: all 0.3s ease-in-out;
+}
+.partnership-card-content h5 {
+    color: #F0EFEF;
+    font-size: 27.322px;
+    font-weight: 350;
+    line-height: 1.2;
+    letter-spacing: 4.098px;
+    font-family:"neue-haas-grotesk-display", sans-serif;
+    text-transform: uppercase;
+}
+.partnership-card:hover{
+    transform: translateY(-10px);
+}
+.partnership-card:hover .partnership-card-info{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.72) 73.29%), #17191B;
+    box-shadow: 4px 8px 25px 0px rgba(0, 0, 0, 0.25);
+}
+.partnership-card .line-gradient{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.partnership-card:hover .line-gradient{
+    opacity: 1;
+    visibility: visible;
+}
+.partnership-card:hover .partnership-card-content{
+    transform: translateY(-8px);
+}
+.partnership-card:hover .partnership-card-icon{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.72) 73.29%), #17191B;
+    filter: drop-shadow(0px 0px 25px #FFC588);
+    border-color: #FFC588;
+}
+/* ==================== 8.partnership card section end===================== */
