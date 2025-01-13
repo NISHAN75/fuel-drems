@@ -30,6 +30,19 @@
     }
   /* ==================== 5.portfolio section end ===================== */
 
+
+}
+/* max-width 1299 */
+@media (max-width: 1299px) {
+
+/* ==================== 9.company section start===================== */
+.specific-news-area-info-inner .specific-news-content-slider-area {
+    max-width: 50%;
+}
+
+/* ==================== 9.company section end===================== */
+
+
 }
 
 /* max-width 1199 */
@@ -287,6 +300,15 @@
     }
     /* ==================== 6.testimonial section end ===================== */
 
+    /* partnership modal */
+    .modal-partnership-wrapper-content {
+        margin-bottom: 50px;
+    }
+    .pagination-btn span{
+        display: none;
+    }
+    /* partnership modal */
+
 
     
 }
@@ -315,6 +337,15 @@
     .modal-content-wrapper {
         gap: 30px;
     }
+    /* partnership modal */
+    .partnership-modal .modal-body {
+        padding: 20px 30px;
+    }
+    .modal-pagination-wrapper::before {
+        left: -30px;
+        width: calc(100% + 60px);
+    }
+    /* partnership modal */
     /* modal */ 
     .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
         width: 100%;
@@ -335,6 +366,7 @@
     }
     /* ==================== 1.banner section end ===================== */
     /* ==================== 4.our Journey section start ===================== */
+    .company-card-wrapper  .row ,
     .our-Journey-content-wrapper .row {
         --bs-gutter-y: 20px;
     }
@@ -446,6 +478,7 @@
 .our-expertise-area {
     padding-bottom: 55px;
 }
+.sub-title ,
 .partnership-card-content h5 ,
 .our-expertise-content h5 {
     font-size: 21.4px;
@@ -462,6 +495,12 @@
     min-height: auto;
 }
 /* ==================== 8.partnership card section end===================== */
+
+/* ==================== 9.company section start===================== */
+.company-logo {
+    max-width: 150px;
+}
+/* ==================== 9.company section end===================== */
 
 }
 
