@@ -1716,18 +1716,20 @@ h6 {
     margin-top: 5px;
 }
 .specific-news-area-info-inner > div{
-    flex: 1 0 50%;
-    max-width: 50%;
+    flex: 1 0 0%;
 }
-.specific-news-img-wrapper img{
+.specific-news-img-wrapper img {
     border-radius: 4px;
     box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.50);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .specific-news-content-slider-area::before{
     content: "";
     position: absolute;
     left: 0;
-    bottom: 68px;
+    bottom: 92px;
     height: 2px;
     width: 100%;
     background: rgb(154,181,202);
@@ -1752,15 +1754,31 @@ h6 {
     bottom: 15px;
 }
 .specific-news-area-info-inner .specific-news-img-slider-area {
-    max-width: calc(50% - 56px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(50% - 56px);
+    z-index: 1;
 }
 .specific-news-area-info-inner .specific-news-content-slider-area {
     max-width: calc(50% + 56px);
+    margin-right: 0;
+    margin-left: auto;
+    padding: 50px 0 24px;
 }
 .specific-news-content-slider{
     max-width: 640px;
     margin-right: 24px;
     margin-left: auto;
+}
+.specific-news-content-slider .swiper-button-next.swiper-button-disabled, 
+.specific-news-content-slider .swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+    opacity: 0.5;
+}
+.specific-news-img-slider-area div{
+    height: 100%;
 }
 .swiper-btn-wrapper {
     top: auto;
@@ -1780,7 +1798,7 @@ h6 {
 .swiper-btn-wrapper:hover {
     color: #9AB5CA;
 }
-.swiper-btn-wrapper:hover .swiper-icon-btn:hover {
+.swiper-btn-wrapper:hover .swiper-icon-btn {
     background-color: #9AB5CA;
 }
 .company-card{
@@ -1853,9 +1871,10 @@ h6 {
     --bs-gutter-x: 40px;
     --bs-gutter-y: 51px;
 }
-/* ==================== 9.company section end===================== */
 
 /* ==================== 9.company section end===================== */
+
+/* ==================== 10.elevating excellence section start===================== */
 .back-page-btn {
     color: #000;
     font-size: 16px;
@@ -1933,9 +1952,9 @@ h6 {
 .elevating-excellence-details {
     margin-top: 96px;
 }
-/* ==================== 9.company section end===================== */
+/* ==================== 10.elevating excellence section end===================== */
 
-/* ==================== 10.client testimonial section start ==================== */
+/* ==================== 11.client testimonial section start ==================== */
 .client-shape-img{
     position: absolute;
     left: -64px;
@@ -1980,5 +1999,108 @@ h6 {
 .client-testimonial-area{
     padding-top: 43px;
 }
-/* ==================== 10.client testimonial section end ===================== */
+.separate-bg{
+    height: 44px;
+}
+.separate-bg img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    object-fit: cover;
+}
+/* ==================== 11.client testimonial section end ===================== */
+
+
+/* ==================== 12.gallery section start===================== */
+.gallery-area{
+    padding: 128px 0;
+}
+.gallery-wrapper {
+    display: grid;
+    grid-template-columns: 345px 345px 540px;
+    gap: 39px;
+    height: 100%;
+}
+.gallery-item{
+    height: 345px;
+    padding: 1px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.gallery-info{
+    border-radius: 4px;
+    overflow: hidden;
+}
+.gallery-item:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    height: 733px;
+}
+.gallery-item div{
+    height: 100%;
+}
+.gallery-item .gallery-info img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.gallery-item:nth-child(1) .gallery-info img {
+    height: 733px;
+}
+.gallery-item:nth-child(2) {
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+    height: 539px;
+}
+.gallery-item:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+.gallery-item:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+.gallery-item:nth-child(5) {
+    grid-column: 3 / -1;
+    grid-row: 2 / 4;
+    height: 539px;
+}
+/* ==================== 12.gallery section end ===================== */
+
+/* ==================== 13.excellence section start ===================== */
+.excellence-area{
+    padding: 110px 0 120px;
+}
+.excellence-content h2{
+    margin-bottom: 20px;
+}
+.excellence-content p{
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 350;
+    letter-spacing: 2.7px;
+}
+.excellence-content .btn-wrapper{
+    margin-top: 12px;
+}
+.excellence-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    opacity: 0.2;
+}
+.excellence-area::before{
+    z-index: 3;
+    background: linear-gradient(0deg, rgba(37, 42, 50, 0.00) 76.56%, #252A32 112.97%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+    mix-blend-mode: multiply;
+}
+
+/* ==================== 13.excellence section end ===================== */
 

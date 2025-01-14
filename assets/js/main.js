@@ -237,25 +237,19 @@
 		// specific news img slider
 		var specificNewsImgSlider = new Swiper(".specific-news-img-slider", {
 			slidesPerView: 1,
-			loop: true,
 			spaceBetween: 40,
-			// autoplay: {
-			// 	delay: 5000,
-			// 	disableOnInteraction: false,
-			// },
 		});
 		var specificNewsContentSlider = new Swiper(".specific-news-content-slider", {
 			slidesPerView: 1,
-			loop: true,
 			spaceBetween: 40,
 			pagination: {
 			  el: ".swiper-pagination",
 			  clickable: true,
 			},
-			// autoplay: {
-			// 	delay: 5000,
-			// 	disableOnInteraction: false,
-			// },
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
 			navigation: {
 			  nextEl: ".swiper-button-next",
 			  prevEl: ".swiper-button-prev",

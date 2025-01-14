@@ -29,7 +29,12 @@
         right: 0;
     }
   /* ==================== 5.portfolio section end ===================== */
-
+  /* ==================== 12.gallery section start===================== */
+    .gallery-wrapper {
+        grid-template-columns: 1fr 1fr 1.5fr;
+        gap: 15px;
+    }
+  /* ==================== 12.gallery section end===================== */
 
 }
 /* max-width 1299 */
@@ -37,10 +42,12 @@
 
 /* ==================== 9.company section start===================== */
 .specific-news-area-info-inner .specific-news-content-slider-area {
-    max-width: 50%;
+    max-width: calc(50% + 30px);
 }
 
 /* ==================== 9.company section end===================== */
+
+
 
 
 }
@@ -79,7 +86,15 @@
     .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
         width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%));
     }
+    .swiper-btn-wrapper .swiper-text{
+        display: none;
+    }
     /* ==================== 5.portfolio section end ===================== */
+    /* ==================== 12.gallery section start===================== */
+    .gallery-wrapper {
+        grid-template-columns: 0.5fr 0.5fr 1fr;
+    }
+    /* ==================== 12.gallery section end===================== */
 }
 
 /* max-width 991 */
@@ -99,6 +114,9 @@
         --bs-gutter-y: 30px;
     }
     /* all padding */
+    
+    .excellence-area,
+    .gallery-area ,
     .partnership-card-wrapper ,
     .partnership-area ,
     .our-expertise-area .section-title-wrapper,
@@ -217,6 +235,7 @@
     /* ==================== 6.our expertise section end ===================== */
 
     /* ==================== 6.testimonial section start ===================== */
+    .client-testimonial-content blockquote ,
     .testimonial-content blockquote {
         font-size: 32px;
     }
@@ -255,6 +274,87 @@
         background: linear-gradient(0deg, rgba(37, 42, 50, 0.00) 66.32%, #252A32 100%), #434B56;
     }
     /* ==================== 7.footer section end===================== */
+
+    /* ==================== 9.company section start===================== */
+    .specific-news-area-info-inner .specific-news-img-slider-area {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    .specific-news-area-info-inner {
+        flex-direction: column;
+    }
+    .specific-news-content-slider,
+    .specific-news-area-info-inner .specific-news-content-slider-area {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .specific-news-area-info-inner .specific-news-content-slider-area{
+        padding: 30px 20px;
+    }
+    .specific-news-content-slider-area::before {
+        bottom: 110px;
+    }
+    .specific-news-img-wrapper img {
+        height: 400px;
+    }
+    /* ==================== 9.company section end===================== */
+
+
+    /* ==================== 11.client testimonial section start ===================== */
+    .client-profile-wrapper {
+        max-width: 450px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .client-testimonial-area .row {
+        flex-direction: column-reverse;
+    }
+    .client-shape-img {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .client-testimonial-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    /* ==================== 11.client testimonial section end ===================== */
+
+    /* ==================== 12.gallery section start===================== */
+    .gallery-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .gallery-item{
+        height: 400px;
+    }
+    .gallery-item:nth-child(5)  ,
+    .gallery-item:nth-child(4)  ,
+    .gallery-item:nth-child(3) ,
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        height: 400px;
+    }
+    .gallery-item:nth-child(2) {
+        grid-row: 2;
+        height: 400px;
+    }
+    .gallery-item:nth-child(3) {
+        grid-row: 3;
+    }
+    .gallery-item:nth-child(4) {
+        grid-row: 4;
+    }
+    .gallery-item:nth-child(5) {
+        grid-row: 4;
+    }
+    .gallery-item:nth-child(1) .gallery-info img {
+        height: 400px;
+    }
+    /* ==================== 12.gallery section end===================== */
+
+
 }
 
 /* max-width 767 */
@@ -500,8 +600,36 @@
 .company-logo {
     max-width: 150px;
 }
+.specific-news-content-slider-area::before {
+    bottom: 125px;
+}
+.specific-news-content-slider .swiper-btn-wrapper {
+    left: 50%;
+    right: auto;
+    margin-left: -80px;
+}
+.specific-news-content-slider .swiper-button-next.swiper-btn-wrapper {
+    right: 50%;
+    left: auto;
+    margin-right: -80px;
+}
+.specific-news-content-slider  .swiper-horizontal>.swiper-pagination-bullets, 
+.specific-news-content-slider  .swiper-pagination-bullets.swiper-pagination-horizontal, 
+.specific-news-content-slider  .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 60px;
+}
 /* ==================== 9.company section end===================== */
-
+/* ==================== 12.gallery section start===================== */
+    .gallery-item,
+    .gallery-item:nth-child(1) .gallery-info img ,
+    .gallery-item:nth-child(5)  ,
+    .gallery-item:nth-child(4)  ,
+    .gallery-item:nth-child(3) ,
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(1) {
+        height: 300px;
+    }
+/* ==================== 12.gallery section end===================== */
 }
 
 /* max-width 479 */
