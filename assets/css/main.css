@@ -2104,3 +2104,85 @@ h6 {
 
 /* ==================== 13.excellence section end ===================== */
 
+/* ==================== 14.ambition section end ===================== */
+.ambition-area .partnership-content{
+    max-width: 840px;
+}
+/* ==================== 14.ambition section end ===================== */
+.team-area{
+    padding: 112px 0;
+}
+/* ==================== 15.team section start ===================== */
+.team-area .row{
+    --bs-guter-x:15px;
+    --bs-gutter-y:40px;
+}
+.team-card-wrapper{
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+.team-img-wrapper{
+    border-radius: 4px;
+    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.50);
+    padding: 2px;
+    overflow: hidden;
+}
+.team-img-info{
+    border-radius: 4px;
+    overflow: hidden;
+    background: aliceblue;
+    transition: all 0.3s ease-in-out;
+}
+.team-img-info img{
+    mix-blend-mode: luminosity;
+    transition: all 0.3s ease-in-out;
+}
+.team-card-content {
+    margin-top: 25px;
+}
+.team-card-content h5{
+    color: #F0EFEF;
+    font-family:"neue-haas-grotesk-display", sans-serif;
+    font-size: 27.322px;
+    font-weight: 350;
+    line-height: 1.2;
+    letter-spacing: 4.098px;
+    margin-bottom: 12px;
+}
+.team-card-content p{
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 350;
+    letter-spacing: 1.6px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+.team-card-content p::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    height: 1px;
+    width: 336px;
+    transform: translateX(-50%);
+    background: rgb(255,197,136);
+    background: radial-gradient(circle, rgba(255,197,136,1) 0%, rgba(255,197,136,0) 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.team-card-wrapper:hover{
+    transform: translateY(-10px);
+}
+.team-card-wrapper:hover .team-card-content p::before{
+    opacity: 1;
+    visibility: visible;
+    bottom: -10px;
+}
+.team-card-wrapper:hover .team-img-info img{
+    mix-blend-mode: normal;
+}
+/* ==================== 15.team section end ===================== */
+
