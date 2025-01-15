@@ -2184,5 +2184,94 @@ h6 {
 .team-card-wrapper:hover .team-img-info img{
     mix-blend-mode: normal;
 }
+
 /* ==================== 15.team section end ===================== */
+
+/* team modal start */
+.team-modal-img-wrapper{
+    max-width: 506px;
+}
+.team-modal-img-wrapper-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+    grid-column-gap: 10px;
+    grid-row-gap: 17px;
+}
+.team-modal-img-item{
+    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.50);
+}
+.team-modal-img-info{
+    background: aliceblue;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 100%;
+}
+.team-modal-img-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    mix-blend-mode: luminosity;
+}
+.team-modal-img-item:nth-child(1){
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    height: 706px;
+}
+.team-modal-img-item:nth-child(1) img{
+    mix-blend-mode: normal;
+}
+.team-modal-wrapper{
+    display: flex;
+    gap: 48px;
+    margin-bottom: 101px;
+}
+.team-modal-wrapper > div{
+    flex: 1 0 0%;
+}
+.team-member-position {
+    color: #F0EFEF;
+    font-size: 27.322px;
+    font-weight: 350;
+    line-height: 1.2;
+    letter-spacing: 4.098px;
+    text-transform: uppercase;
+}
+.team-modal-content-info{
+    max-width: 639px;
+    margin-top: 30px;
+}
+.team-modal-content-info p{
+    color:#FFF;
+    font-weight: 350;
+    letter-spacing: 2.7px;
+}
+.team-modal .modal-body {
+    padding: 16px 36px 161px 36px;
+    padding-top: 0;
+    padding-bottom: 24px;
+}
+.social-link-wrapper{
+    margin-top: 16px;
+}
+.social-link-wrapper span {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 350;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.social-link {
+    margin-top: -2px;
+}
+.social-link svg path{
+    transition: all 0.3s ease-in-out;
+}
+.social-link:hover svg path{
+    fill: #9AB5CA;
+}
+
+/* team modal end */
 
