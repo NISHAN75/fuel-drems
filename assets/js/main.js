@@ -219,6 +219,24 @@
 			mousewheel: true,
 			keyboard: true,
 		});
+		var singleTeamTestimonialSlider = new Swiper(".single-team-testimonial-slider", {
+			cssMode: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true, // Allows bullets to be clickable
+			},
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			loop: true,
+			mousewheel: true,
+			keyboard: true,
+		});
 
 
 		// brand slider 

@@ -2284,6 +2284,53 @@ h6 {
 /* ==================== 16.single team testimonial section start ===================== */
 .team-testimonial-area{
     background-color: #FFFFFF;
+
+}
+
+.team-testimonial-img-wrapper {
+    position: absolute;
+    left: -73px;
+    bottom: 0;
+}
+.team-testimonial-img-item{
+    /* background-color: #fff; */
+}
+.team-testimonial-img-item > img {
+    mix-blend-mode: luminosity;
+    max-height: 615px;
+}
+.team-testimonial-img-item:nth-child(2) {
+    margin-left: -32%;
+    margin-right: -29%;
+    position: relative;
+    z-index: 1;
+}
+.team-testimonial-img-item:nth-child(2) img{
+    max-height: 665px;
+}
+.single-team-testimonial-area {
+    max-width: 615px;
+    margin-right: 0;
+    margin-left: auto;
+}
+.author-information-wrapper  .signature-img{
+    max-width: 213px;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 17px;
+}
+.single-team-testimonial-slider .swiper-horizontal>.swiper-pagination-bullets, 
+.single-team-testimonial-slider .swiper-pagination-bullets.swiper-pagination-horizontal, 
+.single-team-testimonial-slider .swiper-pagination-custom, .swiper-pagination-fraction {
+    left: auto;
+    width: auto;
+    right: 0;
+}
+.single-team-testimonial-slider{
+    padding-bottom: 16px;
+}
+.header-fix{
+    height: 85px;
 }
 /* ==================== 16.single team testimonial section end  ===================== */
 
