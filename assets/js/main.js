@@ -219,6 +219,7 @@
 			mousewheel: true,
 			keyboard: true,
 		});
+		// single team testimonial slider
 		var singleTeamTestimonialSlider = new Swiper(".single-team-testimonial-slider", {
 			cssMode: true,
 			navigation: {
@@ -227,7 +228,7 @@
 			},
 			pagination: {
 				el: ".swiper-pagination",
-				clickable: true, // Allows bullets to be clickable
+				clickable: true, 
 			},
 			autoplay: {
 				delay: 5000,
@@ -236,8 +237,44 @@
 			loop: true,
 			mousewheel: true,
 			keyboard: true,
+			on: {
+				slideChange: function () {
+					var activeIndex = this.realIndex;
+					var $imgItems = $(".team-testimonial-img-item");
+					$imgItems.removeClass("active");
+					$imgItems.eq(activeIndex).addClass("active");
+				},
+			},
 		});
-
+		$(".team-testimonial-img-item").eq(singleTeamTestimonialSlider.realIndex).addClass("active");
+		// single team testimonial slider 2
+		var singleTeamTestimonialSlider2 = new Swiper(".single-team-testimonial-slider-2", {
+			cssMode: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true, 
+			},
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			loop: true,
+			mousewheel: true,
+			keyboard: true,
+			on: {
+				slideChange: function () {
+					var activeIndex = this.realIndex;
+					var $imgItems = $(".team-testimonial-img-item");
+					$imgItems.removeClass("active");
+					$imgItems.eq(activeIndex).addClass("active");
+				},
+			},
+		});
+		$(".team-testimonial-img-item").eq(singleTeamTestimonialSlider.realIndex).addClass("active");
 
 		// brand slider 
 		let brandSlider = new Swiper(".tp-brand-slider", {

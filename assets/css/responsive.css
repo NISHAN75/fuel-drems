@@ -1,7 +1,79 @@
-/* 1400, 1199, 991, 767, 575, 480, 360, 320 */
 /* CSS Index
 -----------------------------------
 1.default css
+2.header section 
+3.banner section
+	3.1 doc-origin-banner
+	3.2 doc-origin-cloud
+	3.3 oem-solution-banner
+	3.4 jetform-banner
+	3.5 manufacturing banner
+	3.6 resources-banner-area 
+	3.7 career-banner-area 
+	3.8 event-banner-area
+	3.9 blog-banner-area
+	3.10 contact-banner-area
+	3.11 request-demo-banner
+	3.12 registration-banner 
+	3.13 trends-banner
+	3.14 latest-news-area
+	3.15 error-banner
+4.business card section
+5.precision area section
+6.outperform section
+7.counter area section
+8.modification section
+9.multi Platform section
+10.industries section
+11.testimonial section
+12.news area section
+13.footer area section
+14.doc-origin brochure section
+15.unmatched section 
+16.reliability section
+17.technical specifications section
+18.streamlined section
+19.compliance section
+20.proven across section
+21.contact section
+23.What is doc-origin cloud section
+24.why choose doc-origin cloud section
+25.doc-origin services team section start
+26.generation system section
+27.simplifying industries section
+28.doc-origin cloud timeline section
+29.key functions section
+30.standard forms section
+31.cta section
+32.compliance standards section
+33.solutions replacement section 
+34.outdated section
+35.normal section area
+36.companies switch section
+37.document switch section
+38.bottomline technologies section
+39.over bottomline section
+40.bottomline-behind-area section
+41.deserves better area section
+42.form sample section 
+43.our customers section 
+44.support tickets section 
+45.Case Study card section
+46.global-reach-area section
+47.join the team section
+48.why eclipse section
+49.our distributors section 
+50.searching partners section
+51.resources card section
+52.template conversion service
+53.contact card section
+54.content block section
+55.privacy policy section
+56.registration contact section
+57.registration contact section
+58.single article section
+59.search section
+
 -----------------------------------
 */
 
@@ -46,6 +118,37 @@
 }
 
 /* ==================== 9.company section end===================== */
+
+/* ==================== 16.single team testimonial section start  ===================== */
+.team-testimonial-img-wrapper {
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    max-width: 850px;
+}
+.single-team-testimonial-area {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 20px;
+    padding-bottom: 15px;
+}
+.author-information-wrapper  .signature-img {
+    margin-right: auto;
+    margin-left: auto;
+}
+.testimonial-content{
+    text-align: center !important;
+}
+.single-team-testimonial-slider .swiper-horizontal>.swiper-pagination-bullets, .single-team-testimonial-slider .swiper-pagination-bullets.swiper-pagination-horizontal, .single-team-testimonial-slider .swiper-pagination-custom, .swiper-pagination-fraction {
+    width: 100%;
+}
+.team-testimonial-area {
+    padding-top: 50px;
+}
+
+/* ==================== 16.single team testimonial section end  ===================== */
 
 
 
@@ -117,7 +220,7 @@
         --bs-gutter-y: 30px;
     }
     /* all padding */
-    
+    .page-template-template-contact .contact-area ,
     .excellence-area,
     .gallery-area ,
     .partnership-card-wrapper ,
@@ -237,7 +340,7 @@
     }
     /* ==================== 6.our expertise section end ===================== */
 
-    /* ==================== 6.testimonial section start ===================== */
+    /* ==================== 11.testimonial section start ===================== */
     .client-testimonial-content blockquote ,
     .testimonial-content blockquote {
         font-size: 32px;
@@ -249,10 +352,10 @@
         padding-right: 24px;
         padding-left: 24px;
     }
-    /* ==================== 6.testimonial section end ===================== */
+    /* ==================== 11.testimonial section end ===================== */
 
 
-    /* ==================== 7.footer section start===================== */
+    /* ==================== 13.footer section start===================== */
     .footer-area {
         position: relative;
         padding: 20px 0 10px;
@@ -276,9 +379,9 @@
     .footer-area::after{
         background: linear-gradient(0deg, rgba(37, 42, 50, 0.00) 66.32%, #252A32 100%), #434B56;
     }
-    /* ==================== 7.footer section end===================== */
+    /* ==================== 13.footer section end===================== */
 
-    /* ==================== 9.company section start===================== */
+    /*================== 43.our customers section start ==================== */
     .specific-news-area-info-inner .specific-news-img-slider-area {
         position: relative;
         width: 100%;
@@ -301,7 +404,7 @@
     .specific-news-img-wrapper img {
         height: 400px;
     }
-    /* ==================== 9.company section end===================== */
+    /*================== 43.our customers section end ==================== */
 
 
     /* ==================== 11.client testimonial section start ===================== */
@@ -428,6 +531,9 @@
         display: none;
     }
     /* partnership modal */
+
+
+
 
 
     
@@ -652,6 +758,23 @@
         height: 300px;
     }
 /* ==================== 12.gallery section end===================== */
+
+/* ==================== 16.single team testimonial section start  ===================== */
+.team-testimonial-img-item > img {
+    height: 200px;
+    object-fit: cover;
+}
+.team-testimonial-img-item:nth-child(2) > img{
+    height: 220px;
+}
+.team-testimonial-img-wrapper {
+    max-width: 400px;
+}
+/* ==================== 16.single team testimonial section end  ===================== */
+
+
+
+
 }
 
 /* max-width 479 */
